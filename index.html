@@ -5,334 +5,388 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dari Services</title>
 
-    <style>
+   <style>
 
-        * {
+    * {
     box-sizing: border-box;
     overflow-x: hidden;
 }
 
-        body {
-     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-     margin: 0;
-     padding: 0;
-     background:#000036;
- }
- 
- header {
-     background-color: #ffffff;
-     color: #333333;
-     padding: 20px 0;
-     text-align: center;
-     display: flex;
-     justify-content: space-between;
-     align-items: center;
-     padding: 1px 2px;
- }
- 
- nav ul {
-     list-style-type: none;
-     padding: 0;
-     margin: 0;
-     display: flex;
-     gap: 15px;
- }
- 
- nav ul li {
-     display: inline;
- }
- 
- nav ul li a {
-     color: #333333;
-     text-decoration: none;
-     font-weight: bold;
- }
- .hero {
-     background-color: #000036;
-     padding: 50px 20px;
-     text-align: center;
- }
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #000036;
+}
 
- 
- .hero h2 {
-     margin-top: 0;
- }
- 
- .about, .services, .contact, .client, .professional {
-     padding: 20px;
-     background-color: #ffffff;
-     margin: 20px;
- }
- 
- .about h2, .services h2, .contact h2, .client h2, .professional h2 {
-     text-align: center;
- }
- 
- .services ul {
-     list-style-type: none;
-     padding: 0;
-     text-align: center;
- }
- 
- .services ul li {
-     display: inline-block;
-     padding: 10px;
-     border: 1px solid #000000;
-     margin: 5px;
- }
- 
- .client ul, .professional ul {
-     list-style-type: none;
-     padding: 0;
-     margin: 0;
-     display: flex;
-     justify-content: space-around;
-     text-align: center;
- }
- 
- .client ul li, .professional ul li {
-     padding: 20px;
-     border: 1px solid #0b0033;
-     margin: 5px;
-     flex: 1;
- }
- 
- .client ul li strong, .professional ul li strong {
-     font-size: 24px;
-     color: #1E90FF;
- }
- 
- .client button, .professional button {
-     display: block;
-     margin: 20px auto;
-     padding: 10px 20px;
-     background-color: #68aef3;
-     color: white;
-     border: none;
-     border-radius: 5px;
-     cursor: pointer;
-     font-size: 16px;
- }
- 
- .client button:hover, .professional button:hover {
-     background-color: #1C86EE;
- }
- 
- form {
-     display: flex;
-     flex-direction: column;
-     max-width: 600px;
-     margin: 0 auto;
- }
- 
- form label {
-     margin: 10px 0 5px;
- }
- 
- form input, form textarea {
-     padding: 10px;
-     margin-bottom: 10px;
-     border: 1px solid #ccc;
-     border-radius: 5px;
- }
- 
- button {
-     padding: 10px 20px;
-     background-color: #333333;
-     color: white;
-     border: none;
-     border-radius: 5px;
-     cursor: pointer;
- }
- 
- button:hover {
-     background-color: #555555;
- }
- 
- 
- 
- img.logo {
-     width: 90px;
-     margin-bottom: 2px;
- }
- 
- .promo-section {
-     display: flex;
-     align-items: center;
-     background-color: #ffffff;
-     padding: 20px;
-     border-radius: 8px;
-     width: 90%;
-     height: 500px;
-     margin: 20px auto;
- }
- 
- .promo-phone {
-     flex: 1;
-     text-align: right;
-     position: relative;
-     display: inline-block;
- }
- 
- .promo-phone img {
-     width: 290px;
-     height: 290px;
-     margin-left: 200%;
- }
- 
- .promo-logo {
-     position: absolute;
-     top: 50%;
-     left: 19%;
-     transform: translateX(-50%);
-     transform: translateY(-70%);
-     width: 20px;
-     height: auto;
-     max-width: 80px;
-     max-height: 80px;
- }
- 
- .promo-content {
-     flex: 2;
-     padding-right: 200px;
- }
- 
- .promo-title {
-     font-size: 36px;
-     font-weight: bold;
-     left: 0;
-     text-align: left;
-     margin-bottom: 10px;
- }
- 
- .promo-description {
-     font-size: 18px;
-     margin-bottom: 20px;
-     left: 0;
-     margin-right: 50%;
- }
- 
- .promo-buttons {
-     display: flex;
-     gap: 10px;
-     left: 0;
- }
- 
- .promo-button {
-     display: flex;
-     align-items: center;
-     padding: 10px 20px;
-     border: none;
-     border-radius: 5px;
-     cursor: pointer;
-     font-size: 16px;
-     font-weight: bold;
- }
- 
- .translate-button {
-     right: 20px;
-     top: 20px;
-     padding: 10px;
-     background-color: #007bff;
-     color: white;
-     border: none;
-     cursor: pointer;
-     border-radius: 5px;
- }
- 
- .translate-button:hover {
-     background-color: #ffffff;
- }
- /* Footer */
+header {
+    background-color: #ffffff;
+    color: #333333;
+    padding: 20px 0;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1px 2px;
+}
 
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 15px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: #333333;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.hero {
+    background-color: #000036;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.hero h2 {
+    margin-top: 0;
+}
+
+.about, .services, .contact, .client, .professional {
+    padding: 20px;
+    background-color: #ffffff;
+    margin: 20px;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+    .about, .services, .contact, .client, .professional {
+        width: 100%;
+        margin: 10px 0;
+        padding: 20px; /* Increased padding */
+        font-size: 16px; /* Slightly larger font size for readability */
+    }
+
+    .hero h2 {
+        font-size: 24px; /* Adjust heading for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .about, .services, .contact, .client, .professional {
+        padding: 15px;
+        font-size: 14px;
+        line-height: 1.5; /* Improve text readability */
+    }
+
+    .hero h2 {
+        font-size: 20px; /* Adjust further for tiny screens */
+    }
+}
+
+.about h2, .services h2, .contact h2, .client h2, .professional h2 {
+    text-align: center;
+    font-size: 18px; /* Larger header size on small screens */
+    margin-bottom: 15px;
+}
+
+.services ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+}
+
+.services ul li {
+    display: inline-block;
+    padding: 10px;
+    border: 1px solid #000000;
+    margin: 5px;
+}
+
+.client ul, .professional ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    flex-wrap: wrap;  /* Permet aux éléments de se déplacer sur une nouvelle ligne si nécessaire */
+    align-items: stretch; /* Aligne tous les <li> à la même hauteur */
+}
+
+.client ul li, .professional ul li {
+    padding: 20px;
+    border: 1px solid #0b0033;
+    margin: 5px;
+    flex: 1;
+    min-width: 250px; /* Empêche que les éléments deviennent trop petits */
+    max-width: 300px;  /* Limite la largeur sur les grands écrans */
+    box-sizing: border-box;
+
+    /* Uniformiser la hauteur */
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.client ul li strong, .professional ul li strong {
+    font-size: 24px;
+    color: #1E90FF;
+}
+
+.client button, .professional button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #68aef3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center;
+}
+
+.client button:hover, .professional button:hover {
+    background-color: #1C86EE;
+}
+
+/* Media Query pour mobile */
+@media (max-width: 768px) {
+    .client ul, .professional ul {
+        flex-direction: column;  /* Change la direction en colonne sur mobile */
+        align-items: center;  /* Centre les éléments sur mobile */
+    }
+
+    .client ul li, .professional ul li {
+        flex: none;  /* Empêche les éléments de prendre trop de place sur mobile */
+        max-width: 100%;  /* Les éléments prendront toute la largeur disponible sur mobile */
+        margin-bottom: 20px;
+        height: auto; /* Laisse la hauteur s’adapter au contenu sur mobile */
+    }
+
+    .client button, .professional button {
+        width: 100%;  /* Les boutons prennent toute la largeur sur mobile */
+    }
+
+    .client ul li strong, .professional ul li strong {
+        font-size: 20px;  /* Réduction de la taille du texte sur mobile */
+    }
+}
+
+
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+form label {
+    margin: 10px 0 5px;
+}
+
+form input, form textarea {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #333333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #555555;
+}
+
+img.logo {
+    width: 90px;
+    margin-bottom: 2px;
+}
+
+.promo-section {
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 90%;
+    height: 500px;
+    margin: 20px auto;
+}
+
+.promo-phone {
+    flex: 1;
+    text-align: right;
+    position: relative;
+    display: inline-block;
+}
+
+.promo-phone img {
+    width: 290px;
+    height: 290px;
+    margin-left: 200%;
+}
+
+.promo-logo {
+    position: absolute;
+    top: 50%;
+    left: 19%;
+    transform: translateX(-50%);
+    transform: translateY(-70%);
+    width: 20px;
+    height: auto;
+    max-width: 80px;
+    max-height: 80px;
+}
+
+.promo-content {
+    flex: 2;
+    padding-right: 200px;
+}
+
+.promo-title {
+    font-size: 36px;
+    font-weight: bold;
+    left: 0;
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.promo-description {
+    font-size: 18px;
+    margin-bottom: 20px;
+    left: 0;
+    margin-right: 50%;
+}
+
+.promo-buttons {
+    display: flex;
+    gap: 10px;
+    left: 0;
+}
+
+.promo-button {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.translate-button {
+    right: 20px;
+    top: 20px;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.translate-button:hover {
+    background-color: #ffffff;
+}
 
 .social-links {
     display: flex;
-    gap: 30px; /* Espacement entre les icônes */
-    margin-left: 0; /* Supprime les marges à gauche */
+    gap: 30px;
+    margin-left: 0;
 }
 
 .social-links a {
-    font-size: 22px; /* Taille des icônes */
+    font-size: 22px;
     text-decoration: none;
 }
 
-/* Icône Facebook (bleu nuit) */
 .social-links a.facebook {
-    color: #003366; /* Bleu nuit */
+    color: #003366;
 }
 
-/* Icône Instagram (dégradé rose) */
 .social-links a.instagram {
-    background: linear-gradient(to right, #ff5f6d, #ffc3a0); /* Dégradé de rose */
-    color: transparent; /* Rendre le texte transparent pour laisser apparaître le dégradé */
+    background: linear-gradient(to right, #ff5f6d, #ffc3a0);
+    color: transparent;
 }
 
-/* Au survol, changer les couleurs */
 .social-links a:hover {
-    color: #007bff; /* Change la couleur au survol */
+    color: #007bff;
 }
 
-/* Style spécifique aux icônes flottantes */
 .social-icons {
-    position: fixed;         /* Position fixe pour rester visible lors du scroll */
-    left: 10px;              /* Distance par rapport au bord gauche */
-    top: 50%;                /* Centrage vertical */
+    position: fixed;
+    left: 10px;
+    top: 50%;
     transform: translateY(-50%);
     display: flex;
-    flex-direction: column;  /* Affichage vertical */
-    gap: 15px;               /* Espacement entre les icônes */
-    z-index: 1000;           /* Toujours au-dessus des autres éléments */
+    flex-direction: column;
+    gap: 15px;
+    z-index: 1000;
 }
 
 .social-icons a {
     text-decoration: none;
-    font-size: 40px;         /* Taille des icônes */
+    font-size: 40px;
     transition: transform 0.3s ease, color 0.3s ease;
 }
 
-/* Couleur spécifique pour chaque réseau */
 .social-icons a[aria-label="Facebook"] {
-    color: #1877F2; /* Bleu Facebook */
+    color: #1877F2;
 }
 
 .social-icons a[aria-label="Instagram"] {
-    color: #E4405F; /* Rose Instagram */
+    color: #E4405F;
 }
 
 .social-icons a[aria-label="Twitter"] {
-    color: #1DA1F2; /* Bleu Twitter */
+    color: #1DA1F2;
 }
 
 .social-icons a[aria-label="LinkedIn"] {
-    color: #0077B5; /* Bleu LinkedIn */
+    color: #0077B5;
 }
 
 .social-icons a:hover {
-    transform: scale(1.2);   /* Agrandissement au survol */
-    color: #007bff;          /* Couleur au survol */
+    transform: scale(1.2);
+    color: #007bff;
 }
 
-/* Autres styles */
 .moving-text {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 50px;
     color: #ffffff;
     font-weight: bold;
-    white-space: nowrap; /* Empêche le texte de se diviser en plusieurs lignes */
-    animation: scroll-text 20s linear infinite; /* Animation sur 10 secondes, en boucle */
+    white-space: nowrap;
+    animation: scroll-text 20s linear infinite;
 }
 
 @keyframes scroll-text {
     0% {
-        transform: translateX(100%); /* Commence à droite */
+        transform: translateX(100%);
     }
     100% {
-        transform: translateX(-100%); /* Va jusqu'à la gauche */
+        transform: translateX(-100%);
     }
 }
 
-/* Services et autres sections */
 .services ul {
     display: flex;
     flex-wrap: wrap;
@@ -352,13 +406,13 @@
 }
 
 .services ul li:hover {
-    transform: scale(1.05); /* Agrandir légèrement l'élément au survol */
+    transform: scale(1.05);
 }
 
 .services ul li img {
     width: 100%;
     height: 90px;
-    object-fit: cover; /* Pour que l'image couvre l'espace sans être déformée */
+    object-fit: cover;
     border-radius: 10px;
 }
 
@@ -370,40 +424,277 @@
 }
 
 h2 {
-    color: #03015a;  /* Change la couleur de "Bienvenue sur" */
-    font-size: 2em;  /* Taille de police pour tout le titre */
-    font-weight: bold;  /* Mettre en gras si nécessaire */
+    color: #03015a;
+    font-size: 2em;
+    font-weight: bold;
 }
 
 .dari-image {
-    width: 350px;  /* Ajustez la taille de l'image */
+    width: 350px;
     height: auto;
-    vertical-align: middle;  /* Aligne l'image avec le texte */
-    margin-left: 5px;  /* Espace entre l'image et le texte */
+    vertical-align: middle;
+    margin-left: 5px;
 }
 
 .moving-text2 {
     text-align: center;
     font-family: initial;
-    font-size: 1.5em;  /* Taille de police plus grande */
-    color: #050030;  /* Couleur du texte */
-    line-height: 1.8;  /* Espacement entre les lignes */
-    font-weight: bold;  /* Met le texte en gras */
-    margin-top: 20px;  /* Décale le texte du haut de la page */
-    animation: fadeIn 4s forwards;  /* Animation d'apparition du texte */
-    opacity: 0;  /* Démarre invisible */
-    position: relative;  /* Permet de décaler le texte à l'intérieur de son bloc */
-    top: -15px;  /* Remonte légèrement le texte */
+    font-size: 1.5em;
+    color: #050030;
+    line-height: 1.8;
+    font-weight: bold;
+    margin-top: 20px;
+    animation: fadeIn 4s forwards;
+    opacity: 0;
+    position: relative;
+    top: -15px;
 }
 
-/* Animation de fondu */
 @keyframes fadeIn {
     to {
-        opacity: 1;  /* Le texte devient complètement visible */
+        opacity: 1;
     }
 }
 
- 
+body[lang="ar"] .container {
+    display: flex;
+    flex-direction: row-reverse;
+    text-align: right;
+}
+
+body[lang="ar"] .phone-image img {
+    transform: none;
+}
+
+body[lang="ar"] .text-content {
+    text-align: right;
+}
+
+body[lang="ar"] .mobile-app {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
+
+body[lang="ar"] .phone-image {
+    order: -1;
+}
+
+.mobile-app {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 30px 20px;
+    background-color: rgb(255, 255, 255);
+    max-width: 100%;
+    margin: auto;
+    box-sizing: border-box;
+}
+
+.mobile-app .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;  /* Limite la largeur sur PC */
+    margin: 0 auto;
+}
+
+.mobile-app .text-content {
+    flex: 1;
+    padding-right: 20px;
+    text-align: left;  /* Aligner le texte à gauche sur PC */
+}
+
+.mobile-app .text-content h1 {
+    font-size: 2.5rem;
+    color: #000079;
+    margin-bottom: 20px;
+}
+
+.mobile-app .text-content p {
+    font-size: 1.2rem;
+    color: #333333;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.mobile-app .download-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.mobile-app .download-buttons .btn-download img {
+    width: 120px;
+    height: auto;
+}
+
+.mobile-app .phone-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.mobile-app .phone-image img {
+    max-width: 60%;  /* Ajuste l'image pour PC */
+    height: auto;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+}
+
+/* Media Query pour Mobile */
+@media (max-width: 768px) {
+    .mobile-app {
+        padding: 30px 10px;
+    }
+
+    .mobile-app .container {
+        flex-direction: column;
+        align-items: center; /* Centrer les éléments */
+    }
+
+    .mobile-app .text-content {
+        text-align: center;  /* Centrer le texte sur mobile */
+    }
+
+    .mobile-app .text-content h1 {
+        font-size: 2rem;
+    }
+
+    .mobile-app .text-content p {
+        font-size: 1rem;
+    }
+
+    .mobile-app .download-buttons {
+        justify-content: center;
+    }
+
+    .mobile-app .phone-image img {
+        max-width: 80%;
+    }
+}
+
+
+
+footer {
+    background-color: #ffffff;
+    color: #000255;
+    padding: 10px 0;
+    text-align: center;
+    width: 100%;
+    margin: 0;
+    box-sizing: border-box;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
+footer p {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.lang-switcher {
+    margin-left: 20px;
+    display: inline-block;
+}
+
+#lang-select {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ff0000;
+    color: #ffffff;
+    background-color: #14169c;
+    cursor: pointer;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    padding: 10px;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: blue;
+}
+
+#language-btn {
+    padding: 5px 10px;
+    margin-left: 20px;
+    border: 1px solid #f30b0b;
+    background-color: #f0f0f0;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: rgb(255, 255, 255);
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 5px;
+    width: 80%;
+    max-width: 400px;
+}
+
+.close {
+    float: right;
+    font-size: 30px;
+    cursor: pointer;
+    border-radius: 50%;
+    padding: 10px;
+    background-color: #fff;
+    color: #000;
+}
+
+form label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+form input, form button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+.forgot-password {
+    display: block;
+    margin-bottom: 15px;
+    text-align: right;
+}
+
+button {
+    background-color: #000136;
+    color: white;
+    border: none;
+    border-radius: 22px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #4CAF50;
+    cursor: pointer;
+}
+
+
+
           </style>
              
 
@@ -430,45 +721,7 @@ h2 {
         </div>
     </header>
     
-    <style>
-
-        .lang-switcher {
-    margin-left: 20px;
-    display: inline-block;
-}
-
-#lang-select {
-    padding: 5px;
-    border-radius: 5px;
-    border: 1px solid #ff0000;
-    color: #ffffff;
-    background-color: #14169c;
-    cursor: pointer;
-}
-
-    
-.nav-link {
-    text-decoration: none;
-    color: rgb(0, 0, 0);
-    padding: 10px;
-    transition: color 0.3s;
-}
-
-.nav-link:hover {
-    color: blue; /* Change la couleur au survol */
-}
-
-/* Style du bouton de choix de langue */
-#language-btn {
-    padding: 5px 10px;
-    margin-left: 20px;
-    border: 1px solid #f30b0b;
-    background-color: #f0f0f0;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-    </style>
+   
     <section class="hero" id="hero">
         <p class="moving-text" data-translate="hero-text">Trouvez des professionnels qualifiés, de confiance et disponibles près de chez vous</p>
     </section>
@@ -575,70 +828,7 @@ h2 {
             </div>
         </div>
     </div>
-    
-    <style>
-    /* Styles pour le modal */
-    .modal {
-        display: none;
-        position: fixed;
-        z-index: 1000;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        overflow: auto;
-        background-color: rgba(0, 0, 0, 0.5);
-    }
-    
-    .modal-content {
-        background-color: rgb(54, 0, 0);
-        margin: 10% auto;
-        padding: 20px;
-        border-radius: 5px;
-        width: 80%;
-        max-width: 400px;
-    }
-    
-    .close {
-        float: right;
-        font-size: 30px;  /* Augmenter la taille de la croix */
-        cursor: pointer;
-        border-radius: 50%;  /* Arrondir les bords */
-        padding: 10px;  /* Ajouter de l'espace autour du X */
-        background-color: #fff;  /* Fond blanc pour le contraste */
-        color: #000;  /* Couleur du X */
-    }
-    
-    form label {
-        display: block;
-        margin: 10px 0 5px;
-    }
-    
-    form input, form button {
-        width: 100%;
-        padding: 10px;
-        margin-bottom: 15px;
-    }
-    
-    .forgot-password {
-        display: block;
-        margin-bottom: 15px;
-        text-align: right;
-    }
-    
-    button {
-        background-color: #000136;
-        color: white;
-        border: none;
-        border-radius: 22px;
-        cursor: pointer;
-    }
-    
-    button:hover {
-        background-color: #4CAF50;
-        cursor: pointer;
-    }
-    </style>
+   
     
     <script>
     // Ouvre le modal
@@ -762,127 +952,7 @@ h2 {
     
  
     
-   <style>
-    /* Styles de base */
-body {
-    font-family: Arial, sans-serif;
-}
-
-button {
-    background-color: #007bff;
-    color: white;
-    font-size: 16px;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #0056b3;
-}
-
-/* Modale */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgb(0, 0, 0);
-    background-color: rgba(0, 0, 0, 0.4);
-    padding-top: 60px;
-}
-
-.modal-content {
-    background-color: #fefefe;
-    margin: 5% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-    max-width: 400px;
-}
-
-.close {
-    color: #aaa;
-    font-size: 28px;
-    font-weight: bold;
-    position: absolute;
-    top: 0;
-    right: 25px;
-}
-
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-input {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-}
-
-/* Lien de création de compte */
-a {
-    color: #007bff;
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-/* Agrandir le logo */
-.logo {
-    width: 150px;
-    height: auto;
-}
-
-/* Style des liens de navigation */
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 15px;
-}
-
-.nav-link {
-    text-decoration: none;
-    color: black;
-    padding: 10px;
-    transition: color 0.3s;
-}
-
-.nav-link:hover {
-    color: blue;
-}
-
-/* Positionnement du sélecteur de langue à droite */
-.language-switcher {
-    position: absolute;
-    right: 20px;
-    top: 15px;
-}
-
-#language-select {
-    padding: 5px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    cursor: pointer;
-}
-
-
-   </style>
+   
     <script>
     // Ouvrir la modale de connexion
 function openLoginModal() {
@@ -955,117 +1025,6 @@ function showSignupForm() {
     </form>
 </section>
 
-
-<style>
-/* Pour la langue arabe */
-body[lang="ar"] .container {
-    display: flex;
-    flex-direction: row-reverse;  /* Inverse la direction des éléments pour l'arabe */
-    text-align: right;  /* Aligne tout le texte à droite */
-}
-
-body[lang="ar"] .phone-image img {
-    transform: none;  /* Enlève l'inversion de l'image pour la version arabe */
-}
-
-body[lang="ar"] .text-content {
-    text-align: right;  /* Aligne le texte à droite en arabe */
-}
-
-body[lang="ar"] .mobile-app {
-    flex-direction: row-reverse;  /* Inverse l'ordre des éléments */
-    justify-content: space-between; /* Aligne l'image à droite et le texte à gauche en arabe */
-}
-
-body[lang="ar"] .phone-image {
-    order: -1; /* Assure que l'image soit à droite en arabe */
-}
-
-.mobile-app {
-    display: flex;
-    flex-wrap: wrap; /* Permet aux éléments de se réorganiser sur les petits écrans */
-    justify-content: space-between;
-    padding: 50px 20px;
-    background-color: rgb(255, 255, 255);
-    max-width: 1599px;
-    margin: auto;
-    box-sizing: border-box;
-}
-
-.mobile-app .container {
-    display: flex;
-    flex-direction: row;  /* Garde la disposition horizontale par défaut */
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.mobile-app .text-content {
-    flex: 1;
-    padding-right: 20px;
-}
-
-.mobile-app .text-content h1 {
-    font-size: 2.5rem;
-    color: #000079;
-    margin-bottom: 20px;
-}
-
-.mobile-app .text-content p {
-    font-size: 1.2rem;
-    color: #333333;
-    line-height: 1.6;
-    margin-bottom: 30px;
-}
-
-.mobile-app .download-buttons {
-    display: flex;
-    gap: 20px;
-}
-
-.mobile-app .download-buttons .btn-download img {
-    width: 150px;
-    height: auto;
-}
-
-.mobile-app .phone-image {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    padding: 20px;
-}
-
-.mobile-app .phone-image img {
-    max-width: 50%;  /* Augmente la taille de l'image sur mobile */
-    height: auto;
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-    border-radius: 20px;
-}
-
-/* Footer */
-footer {
-    background-color: #ffffff;
-    color: #000255;
-    padding: 10px 0;
-    text-align: center;
-    width: 100%;
-    margin: 0;
-    box-sizing: border-box;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-}
-
-footer p {
-    margin: 0;
-    padding: 0;
-    text-align: center;
-}
-
-
-
-</style>
 <script>
     // Faire une requête GET à l'URL du back-end pour récupérer les utilisateurs
     fetch('http://localhost:3000/users')
