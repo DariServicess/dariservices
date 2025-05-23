@@ -1,0 +1,1253 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dari Services</title>
+
+    <style>
+
+        * {
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+        body {
+     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+     margin: 0;
+     padding: 0;
+     background:#000036;
+ }
+ 
+ header {
+     background-color: #ffffff;
+     color: #333333;
+     padding: 20px 0;
+     text-align: center;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     padding: 1px 2px;
+ }
+ 
+ nav ul {
+     list-style-type: none;
+     padding: 0;
+     margin: 0;
+     display: flex;
+     gap: 15px;
+ }
+ 
+ nav ul li {
+     display: inline;
+ }
+ 
+ nav ul li a {
+     color: #333333;
+     text-decoration: none;
+     font-weight: bold;
+ }
+ .hero {
+     background-color: #000036;
+     padding: 50px 20px;
+     text-align: center;
+ }
+
+ 
+ .hero h2 {
+     margin-top: 0;
+ }
+ 
+ .about, .services, .contact, .client, .professional {
+     padding: 20px;
+     background-color: #ffffff;
+     margin: 20px;
+ }
+ 
+ .about h2, .services h2, .contact h2, .client h2, .professional h2 {
+     text-align: center;
+ }
+ 
+ .services ul {
+     list-style-type: none;
+     padding: 0;
+     text-align: center;
+ }
+ 
+ .services ul li {
+     display: inline-block;
+     padding: 10px;
+     border: 1px solid #000000;
+     margin: 5px;
+ }
+ 
+ .client ul, .professional ul {
+     list-style-type: none;
+     padding: 0;
+     margin: 0;
+     display: flex;
+     justify-content: space-around;
+     text-align: center;
+ }
+ 
+ .client ul li, .professional ul li {
+     padding: 20px;
+     border: 1px solid #0b0033;
+     margin: 5px;
+     flex: 1;
+ }
+ 
+ .client ul li strong, .professional ul li strong {
+     font-size: 24px;
+     color: #1E90FF;
+ }
+ 
+ .client button, .professional button {
+     display: block;
+     margin: 20px auto;
+     padding: 10px 20px;
+     background-color: #68aef3;
+     color: white;
+     border: none;
+     border-radius: 5px;
+     cursor: pointer;
+     font-size: 16px;
+ }
+ 
+ .client button:hover, .professional button:hover {
+     background-color: #1C86EE;
+ }
+ 
+ form {
+     display: flex;
+     flex-direction: column;
+     max-width: 600px;
+     margin: 0 auto;
+ }
+ 
+ form label {
+     margin: 10px 0 5px;
+ }
+ 
+ form input, form textarea {
+     padding: 10px;
+     margin-bottom: 10px;
+     border: 1px solid #ccc;
+     border-radius: 5px;
+ }
+ 
+ button {
+     padding: 10px 20px;
+     background-color: #333333;
+     color: white;
+     border: none;
+     border-radius: 5px;
+     cursor: pointer;
+ }
+ 
+ button:hover {
+     background-color: #555555;
+ }
+ 
+ 
+ 
+ img.logo {
+     width: 90px;
+     margin-bottom: 2px;
+ }
+ 
+ .promo-section {
+     display: flex;
+     align-items: center;
+     background-color: #ffffff;
+     padding: 20px;
+     border-radius: 8px;
+     width: 90%;
+     height: 500px;
+     margin: 20px auto;
+ }
+ 
+ .promo-phone {
+     flex: 1;
+     text-align: right;
+     position: relative;
+     display: inline-block;
+ }
+ 
+ .promo-phone img {
+     width: 290px;
+     height: 290px;
+     margin-left: 200%;
+ }
+ 
+ .promo-logo {
+     position: absolute;
+     top: 50%;
+     left: 19%;
+     transform: translateX(-50%);
+     transform: translateY(-70%);
+     width: 20px;
+     height: auto;
+     max-width: 80px;
+     max-height: 80px;
+ }
+ 
+ .promo-content {
+     flex: 2;
+     padding-right: 200px;
+ }
+ 
+ .promo-title {
+     font-size: 36px;
+     font-weight: bold;
+     left: 0;
+     text-align: left;
+     margin-bottom: 10px;
+ }
+ 
+ .promo-description {
+     font-size: 18px;
+     margin-bottom: 20px;
+     left: 0;
+     margin-right: 50%;
+ }
+ 
+ .promo-buttons {
+     display: flex;
+     gap: 10px;
+     left: 0;
+ }
+ 
+ .promo-button {
+     display: flex;
+     align-items: center;
+     padding: 10px 20px;
+     border: none;
+     border-radius: 5px;
+     cursor: pointer;
+     font-size: 16px;
+     font-weight: bold;
+ }
+ 
+ .translate-button {
+     right: 20px;
+     top: 20px;
+     padding: 10px;
+     background-color: #007bff;
+     color: white;
+     border: none;
+     cursor: pointer;
+     border-radius: 5px;
+ }
+ 
+ .translate-button:hover {
+     background-color: #ffffff;
+ }
+ /* Footer */
+
+
+.social-links {
+    display: flex;
+    gap: 30px; /* Espacement entre les icônes */
+    margin-left: 0; /* Supprime les marges à gauche */
+}
+
+.social-links a {
+    font-size: 22px; /* Taille des icônes */
+    text-decoration: none;
+}
+
+/* Icône Facebook (bleu nuit) */
+.social-links a.facebook {
+    color: #003366; /* Bleu nuit */
+}
+
+/* Icône Instagram (dégradé rose) */
+.social-links a.instagram {
+    background: linear-gradient(to right, #ff5f6d, #ffc3a0); /* Dégradé de rose */
+    color: transparent; /* Rendre le texte transparent pour laisser apparaître le dégradé */
+}
+
+/* Au survol, changer les couleurs */
+.social-links a:hover {
+    color: #007bff; /* Change la couleur au survol */
+}
+
+/* Style spécifique aux icônes flottantes */
+.social-icons {
+    position: fixed;         /* Position fixe pour rester visible lors du scroll */
+    left: 10px;              /* Distance par rapport au bord gauche */
+    top: 50%;                /* Centrage vertical */
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;  /* Affichage vertical */
+    gap: 15px;               /* Espacement entre les icônes */
+    z-index: 1000;           /* Toujours au-dessus des autres éléments */
+}
+
+.social-icons a {
+    text-decoration: none;
+    font-size: 40px;         /* Taille des icônes */
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Couleur spécifique pour chaque réseau */
+.social-icons a[aria-label="Facebook"] {
+    color: #1877F2; /* Bleu Facebook */
+}
+
+.social-icons a[aria-label="Instagram"] {
+    color: #E4405F; /* Rose Instagram */
+}
+
+.social-icons a[aria-label="Twitter"] {
+    color: #1DA1F2; /* Bleu Twitter */
+}
+
+.social-icons a[aria-label="LinkedIn"] {
+    color: #0077B5; /* Bleu LinkedIn */
+}
+
+.social-icons a:hover {
+    transform: scale(1.2);   /* Agrandissement au survol */
+    color: #007bff;          /* Couleur au survol */
+}
+
+/* Autres styles */
+.moving-text {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 50px;
+    color: #ffffff;
+    font-weight: bold;
+    white-space: nowrap; /* Empêche le texte de se diviser en plusieurs lignes */
+    animation: scroll-text 20s linear infinite; /* Animation sur 10 secondes, en boucle */
+}
+
+@keyframes scroll-text {
+    0% {
+        transform: translateX(100%); /* Commence à droite */
+    }
+    100% {
+        transform: translateX(-100%); /* Va jusqu'à la gauche */
+    }
+}
+
+/* Services et autres sections */
+.services ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 0;
+    list-style-type: none;
+    justify-content: center;
+}
+
+.services ul li {
+    width: 100px;
+    text-align: center;
+    border: 2px solid #0b0033;
+    border-radius: 10px;
+    padding: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.services ul li:hover {
+    transform: scale(1.05); /* Agrandir légèrement l'élément au survol */
+}
+
+.services ul li img {
+    width: 100%;
+    height: 90px;
+    object-fit: cover; /* Pour que l'image couvre l'espace sans être déformée */
+    border-radius: 10px;
+}
+
+.services ul li p {
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #0b0033;
+}
+
+h2 {
+    color: #03015a;  /* Change la couleur de "Bienvenue sur" */
+    font-size: 2em;  /* Taille de police pour tout le titre */
+    font-weight: bold;  /* Mettre en gras si nécessaire */
+}
+
+.dari-image {
+    width: 350px;  /* Ajustez la taille de l'image */
+    height: auto;
+    vertical-align: middle;  /* Aligne l'image avec le texte */
+    margin-left: 5px;  /* Espace entre l'image et le texte */
+}
+
+.moving-text2 {
+    text-align: center;
+    font-family: initial;
+    font-size: 1.5em;  /* Taille de police plus grande */
+    color: #050030;  /* Couleur du texte */
+    line-height: 1.8;  /* Espacement entre les lignes */
+    font-weight: bold;  /* Met le texte en gras */
+    margin-top: 20px;  /* Décale le texte du haut de la page */
+    animation: fadeIn 4s forwards;  /* Animation d'apparition du texte */
+    opacity: 0;  /* Démarre invisible */
+    position: relative;  /* Permet de décaler le texte à l'intérieur de son bloc */
+    top: -15px;  /* Remonte légèrement le texte */
+}
+
+/* Animation de fondu */
+@keyframes fadeIn {
+    to {
+        opacity: 1;  /* Le texte devient complètement visible */
+    }
+}
+
+ 
+          </style>
+             
+
+             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="a.css">
+  
+</head>
+<body>
+    <header>
+        <img src="image.png" alt="Logo Dari Services" class="logo">
+        <nav>
+            <ul>
+                <li><a href="#hero" data-translate="nav-home">Accueil</a></li>
+                <li><a href="#about" data-translate="nav-about">À Propos</a></li>
+                <li><a href="#services" data-translate="nav-services">Services</a></li>
+                <li><a href="#contact" data-translate="nav-contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="lang-switcher">
+            <select id="lang-select" onchange="changeLanguage()">
+                <option value="fr">FR</option>
+                <option value="ar">AR</option>
+            </select>
+        </div>
+    </header>
+    
+    <style>
+
+        .lang-switcher {
+    margin-left: 20px;
+    display: inline-block;
+}
+
+#lang-select {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ff0000;
+    color: #ffffff;
+    background-color: #14169c;
+    cursor: pointer;
+}
+
+    
+.nav-link {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    padding: 10px;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: blue; /* Change la couleur au survol */
+}
+
+/* Style du bouton de choix de langue */
+#language-btn {
+    padding: 5px 10px;
+    margin-left: 20px;
+    border: 1px solid #f30b0b;
+    background-color: #f0f0f0;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+    </style>
+    <section class="hero" id="hero">
+        <p class="moving-text" data-translate="hero-text">Trouvez des professionnels qualifiés, de confiance et disponibles près de chez vous</p>
+    </section>
+    
+    <div class="about" id="about">
+        <h2><span data-translate="about-welcome">Bienvenue sur </span>  <img src="image.png" alt="Dari Services" class="dari-image" data-translate="about-logo"></h2>
+
+    
+        <p class="moving-text2" data-translate="about-text">À la recherche de professionnels fiables et qualifiés pour vos besoins quotidiens ?
+        </div>
+<section class="services" id="services">
+    <h2 data-translate="services-title">Nos Services</h2>
+    <ul>
+        <li>
+            <img src="Plombier.jfif" alt="Plomberie">
+            <p data-translate="service-plomberie">Plomberie</p>
+        </li>
+        <li>
+            <img src="Réparateur.jfif" alt="Réparations">
+            <p data-translate="service-reparations">Réparations</p>
+        </li>
+        <li>
+            <img src="Peintre.jfif" alt="Peinture">
+            <p data-translate="service-peinture">Peinture</p>
+        </li>
+        <li>
+            <img src="Nettoyage.jfif" alt="Nettoyage">
+            <p data-translate="service-nettoyage">Nettoyage</p>
+        </li>
+        <li>
+            <img src="Déménagement.jfif" alt="Déménagement">
+            <p data-translate="service-deménagement">Déménagement</p>
+        </li>
+        <li>
+            <img src="Esthéticienne.webp" alt="Esthétique">
+            <p data-translate="service-esthetique">Esthétique</p>
+        </li>
+    </ul>
+</section>
+
+         
+            <section class="client" id="client">
+                <h2 data-translate="client-title">Vous êtes client ?</h2>
+                <ul>
+                    <li>
+                        <strong data-translate="step-1">1</strong><br>
+                        <span data-translate="publish-request">Publier votre demande</span><br>
+                        <span data-translate="describe-need">Décrivez votre besoin</span>
+                    </li>
+                    <li>
+                        <strong data-translate="step-2">2</strong><br>
+                        <span data-translate="professionals-respond">Les professionnels vous répondent</span><br>
+                        <span data-translate="compare-offers">Comparez les offres venant des professionnels de votre commune</span>
+                    </li>
+                    <li>
+                        <strong data-translate="step-3">3</strong><br>
+                        <span data-translate="choose-offer">Choisissez la meilleure offre</span><br>
+                        <span data-translate="select-meeting">Sélectionnez celui que vous souhaitez rencontrer</span>
+                    </li>
+                </ul>
+                <!-- Bouton pour afficher le modal -->
+                <button onclick="openModal()" data-translate="my-account-button">Mon compte</button>
+            </section>
+            
+      <!-- Modal pour connexion et création de compte -->
+       <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeBtn">&times;</span>
+    
+            <!-- Formulaire de connexion -->
+            <div id="login-form">
+                <h3>Connexion</h3>
+                <form>
+                    <label for="email">Email :</label>
+                    <input type="email" id="email" name="email" required>
+                    <label for="password">Mot de passe :</label>
+                    <input type="password" id="password" name="password" required>
+                    <a href="#" class="forgot-password">Mot de passe oublié ?</a>
+                    <button type="submit">Se connecter</button>
+                </form>
+                <p>Pas encore de compte ? <a href="#" onclick="showRegisterForm()">Créer un compte</a></p>
+            </div>
+    
+            <!-- Formulaire d'inscription -->
+            <div id="register-form" style="display: none;">
+                <h3>Créer un compte</h3>
+                <form>
+                    <label for="firstname">Prénom :</label>
+                    <input type="text" id="firstname" name="firstname" required>
+                    <label for="lastname">Nom :</label>
+                    <input type="text" id="lastname" name="lastname" required>
+                    <label for="phone">Numéro de téléphone :</label>
+                    <input type="tel" id="phone" name="phone" required>
+                    <label for="email">Email :</label>
+                    <input type="email" id="email-register" name="email" required>
+                    <label for="password">Mot de passe :</label>
+                    <input type="password" id="password-register" name="password" required>
+                    <label for="address">Adresse :</label>
+                    <input type="text" id="address" name="address" required>
+                    <button type="button" onclick="shareLocation()">Partager ma localisation</button>
+                    <button type="submit">S'inscrire</button>
+                </form>
+                <p>Déjà un compte ? <a href="#" onclick="showLoginForm()">Se connecter</a></p>
+            </div>
+        </div>
+    </div>
+    
+    <style>
+    /* Styles pour le modal */
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+    
+    .modal-content {
+        background-color: rgb(54, 0, 0);
+        margin: 10% auto;
+        padding: 20px;
+        border-radius: 5px;
+        width: 80%;
+        max-width: 400px;
+    }
+    
+    .close {
+        float: right;
+        font-size: 30px;  /* Augmenter la taille de la croix */
+        cursor: pointer;
+        border-radius: 50%;  /* Arrondir les bords */
+        padding: 10px;  /* Ajouter de l'espace autour du X */
+        background-color: #fff;  /* Fond blanc pour le contraste */
+        color: #000;  /* Couleur du X */
+    }
+    
+    form label {
+        display: block;
+        margin: 10px 0 5px;
+    }
+    
+    form input, form button {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+    }
+    
+    .forgot-password {
+        display: block;
+        margin-bottom: 15px;
+        text-align: right;
+    }
+    
+    button {
+        background-color: #000136;
+        color: white;
+        border: none;
+        border-radius: 22px;
+        cursor: pointer;
+    }
+    
+    button:hover {
+        background-color: #4CAF50;
+        cursor: pointer;
+    }
+    </style>
+    
+    <script>
+    // Ouvre le modal
+    function openModal() {
+        document.getElementById("modal").style.display = "block"; // Affiche le modal
+    }
+    
+    // Ferme le modal
+    function closeModal() {
+        document.getElementById("modal").style.display = "none"; // Cache le modal
+    }
+    
+    // Fermer le modal si l'utilisateur clique en dehors de la fenêtre du modal
+    window.addEventListener("click", function(event) {
+        if (event.target == document.getElementById("modal")) {
+            closeModal();
+        }
+    });
+    
+    document.getElementById("closeBtn").addEventListener("click", closeModal);
+    
+    function showRegisterForm() {
+        document.getElementById("login-form").style.display = "none";
+        document.getElementById("register-form").style.display = "block";
+    }
+    
+    function showLoginForm() {
+        document.getElementById("register-form").style.display = "none";
+        document.getElementById("login-form").style.display = "block";
+    }
+    
+    function shareLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition((position) => {
+                alert("Latitude: " + position.coords.latitude + ", Longitude: " + position.coords.longitude);
+            });
+        } else {
+            alert("La géolocalisation n'est pas prise en charge par ce navigateur.");
+        }
+    }
+    </script>
+    
+    
+     
+     <section class="professional" id="professional">
+        <h2 data-translate="professional-title">Vous êtes professionnel ?</h2>
+        <ul>
+            <li>
+                <strong data-translate="step-1">1</strong><br>
+                <span data-translate="create-profile">Créer votre profil gratuit</span><br>
+                <span data-translate="set-services">Paramétrez vos services, réalisations et description pour améliorer votre visibilité</span>
+            </li>
+            <li>
+                <strong data-translate="step-2">2</strong><br>
+                <span data-translate="get-new-clients">Obtenez de nouveaux clients</span><br>
+                <span data-translate="receive-notifications">Recevez des notifications et emails pour chaque demande venant de votre périmètre</span>
+            </li>
+            <li>
+                <strong data-translate="step-3">3</strong><br>
+                <span data-translate="join-community">Rejoindre la communauté</span><br>
+                <span data-translate="collect-feedback">Collectez des feedbacks, échangez avec votre marché et partagez des connaissances avec des collègues</span>
+            </li>
+        </ul>
+        <button onclick="openLoginModal()" data-translate="my-account-button">Mon compte</button>
+    </section>
+    
+   
+    <!-- Modale pour la connexion -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Connexion</h2>
+            <form id="loginForm" action="login.php" method="POST">
+                <label for="loginEmail">Email :</label>
+                <input type="email" id="loginEmail" name="loginEmail" required placeholder="Votre email">
+                <label for="loginPassword">Mot de passe :</label>
+                <input type="password" id="loginPassword" name="loginPassword" required placeholder="Votre mot de passe">
+                <button type="submit">Se connecter</button>
+            </form>
+            <p>Vous n'avez pas de compte ? <a href="#" onclick="openSignupModal()">Créer un compte</a></p>
+        </div>
+    </div>
+    
+    <!-- Modale pour l'inscription -->
+    <div id="signupModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Créer un compte professionnel</h2>
+            <form id="signupForm" action="signup.php" method="POST" enctype="multipart/form-data">
+                <label for="firstName">Prénom :</label>
+                <input type="text" id="firstName" name="firstName" required placeholder="Votre prénom">
+    
+                <label for="lastName">Nom :</label>
+                <input type="text" id="lastName" name="lastName" required placeholder="Votre nom">
+    
+                <label for="email">Email :</label>
+                <input type="email" id="email" name="email" required placeholder="Votre email professionnel">
+    
+                <label for="phone">Numéro de téléphone :</label>
+                <input type="tel" id="phone" name="phone" required placeholder="Votre numéro de téléphone">
+    
+                <label for="cv">CV (Télécharger) :</label>
+                <input type="file" id="cv" name="cv" accept=".pdf,.docx" required>
+    
+                <label for="availability">Disponibilité :</label>
+                <input type="text" id="availability" name="availability" required placeholder="Ex : Disponible immédiatement, ou 1 mois à partir de...">
+    
+                <label for="professionalStatus">Situation professionnelle :</label>
+                <input type="text" id="professionalStatus" name="professionalStatus" required placeholder="Ex : En recherche d'emploi, Freelance, Salarié, etc.">
+    
+                <label for="password">Mot de passe :</label>
+                <input type="password" id="password" name="password" required placeholder="Votre mot de passe">
+    
+                <label for="confirmPassword">Confirmer le mot de passe :</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" required placeholder="Confirmer votre mot de passe">
+    
+                <button type="submit">Créer un compte</button>
+            </form>
+        </div>
+    </div>
+    
+ 
+    
+   <style>
+    /* Styles de base */
+body {
+    font-family: Arial, sans-serif;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Modale */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 400px;
+}
+
+.close {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 0;
+    right: 25px;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Lien de création de compte */
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+/* Agrandir le logo */
+.logo {
+    width: 150px;
+    height: auto;
+}
+
+/* Style des liens de navigation */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: black;
+    padding: 10px;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: blue;
+}
+
+/* Positionnement du sélecteur de langue à droite */
+.language-switcher {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+}
+
+#language-select {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+
+
+   </style>
+    <script>
+    // Ouvrir la modale de connexion
+function openLoginModal() {
+    document.getElementById('loginModal').style.display = "block";
+}
+
+// Ouvrir la modale d'inscription
+function openSignupModal() {
+    document.getElementById('signupModal').style.display = "block";
+}
+
+// Fermer les modales
+function closeModal() {
+    document.getElementById('loginModal').style.display = "none";
+    document.getElementById('signupModal').style.display = "none";
+}
+
+// Fermer la modale si l'utilisateur clique en dehors de la boîte
+window.onclick = function(event) {
+    if (event.target == document.getElementById('loginModal') || event.target == document.getElementById('signupModal')) {
+        closeModal();
+    }
+}
+function showSignupForm() {
+    document.getElementById('login-form').style.display = 'none';
+    document.getElementById('signup-form').style.display = 'block';
+}
+
+    </script>
+<section class="mobile-app">
+<div class="container">
+    <div class="text-content">
+        <h1 id="app-heading" data-translate="app-heading">Téléchargez notre application</h1>
+        <p id="app-description" data-translate="app-description">
+            Profitez de tous nos services en un clic ! Trouvez des professionnels 
+            de confiance près de chez vous grâce à notre application.
+        </p>
+        <div class="download-buttons">
+            <a href="https://your-link-to-apk-file" class="btn-download">
+                Télécharger le fichier APK
+            </a>
+        </div>
+    </div>
+        <div class="phone-image">
+            <img src="dari.png" alt="Mockup Téléphone">
+        </div>
+
+
+</section>
+
+
+
+
+
+
+
+<section class="contact" id="contact">
+    <h2 data-translate="contact-title">Contactez-Nous</h2>
+    <form>
+        <label for="name" data-translate="label-name">Nom :</label>
+        <input type="text" id="name" name="name" required>
+        
+        <label for="email" data-translate="label-email">Email :</label>
+        <input type="email" id="email" name="email" required>
+        
+        <label for="message" data-translate="label-message">Message :</label>
+        <textarea id="message" name="message" required></textarea>
+        
+        <button type="submit" data-translate="button-send">Envoyer</button>
+    </form>
+</section>
+
+
+<style>
+/* Pour la langue arabe */
+body[lang="ar"] .container {
+    display: flex;
+    flex-direction: row-reverse;  /* Inverse la direction des éléments pour l'arabe */
+    text-align: right;  /* Aligne tout le texte à droite */
+}
+
+body[lang="ar"] .phone-image img {
+    transform: none;  /* Enlève l'inversion de l'image pour la version arabe */
+}
+
+body[lang="ar"] .text-content {
+    text-align: right;  /* Aligne le texte à droite en arabe */
+}
+
+body[lang="ar"] .mobile-app {
+    flex-direction: row-reverse;  /* Inverse l'ordre des éléments */
+    justify-content: space-between; /* Aligne l'image à droite et le texte à gauche en arabe */
+}
+
+body[lang="ar"] .phone-image {
+    order: -1; /* Assure que l'image soit à droite en arabe */
+}
+
+.mobile-app {
+    display: flex;
+    flex-wrap: wrap; /* Permet aux éléments de se réorganiser sur les petits écrans */
+    justify-content: space-between;
+    padding: 50px 20px;
+    background-color: rgb(255, 255, 255);
+    max-width: 1599px;
+    margin: auto;
+    box-sizing: border-box;
+}
+
+.mobile-app .container {
+    display: flex;
+    flex-direction: row;  /* Garde la disposition horizontale par défaut */
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.mobile-app .text-content {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.mobile-app .text-content h1 {
+    font-size: 2.5rem;
+    color: #000079;
+    margin-bottom: 20px;
+}
+
+.mobile-app .text-content p {
+    font-size: 1.2rem;
+    color: #333333;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.mobile-app .download-buttons {
+    display: flex;
+    gap: 20px;
+}
+
+.mobile-app .download-buttons .btn-download img {
+    width: 150px;
+    height: auto;
+}
+
+.mobile-app .phone-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.mobile-app .phone-image img {
+    max-width: 50%;  /* Augmente la taille de l'image sur mobile */
+    height: auto;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+}
+
+/* Footer */
+footer {
+    background-color: #ffffff;
+    color: #000255;
+    padding: 10px 0;
+    text-align: center;
+    width: 100%;
+    margin: 0;
+    box-sizing: border-box;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
+footer p {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+
+
+</style>
+<script>
+    // Faire une requête GET à l'URL du back-end pour récupérer les utilisateurs
+    fetch('http://localhost:3000/users')
+      .then(response => {
+        // Vérifier si la réponse est correcte (statut HTTP 200)
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();  // Convertir la réponse en JSON
+      })
+      .then(data => {
+        // Manipuler les données ici (par exemple, afficher la liste d'utilisateurs)
+        console.log(data);  // Affiche la réponse du serveur (les utilisateurs)
+        // Tu peux aussi les afficher dans le HTML :
+        const usersList = document.getElementById('users-list');
+        data.forEach(user => {
+          const li = document.createElement('li');
+li.textContent = `${user.name} - ${user.email}`;
+          usersList.appendChild(li);
+        });
+      })
+      .catch(error => {
+        // Gérer les erreurs ici
+        console.error('There was a problem with the fetch operation:', error);
+      });
+  </script>
+
+
+    
+    <footer>
+        <p data-translate="copyright">&copy; 2025 Dari Services. Tous droits réservés.</p>
+
+        <div class="social-icons">
+            <a href="https://www.facebook.com/share/1AebpBghPt/" target="_blank" aria-label="Facebook">
+                <i class="fab fa-facebook"></i>
+            </a>
+            <a href="https://www.instagram.com/dari_service?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://x.com" target="_blank" aria-label="X">
+                <svg width="20" height="20" viewBox="0 0 1200 1227" fill="#000000">
+                    <path d="M714.163 519.284L1160.89 0H1055.03L667.137 450.887L357.328 0H0L468.492 681.821L0 1226.37H105.866L515.491 750.218L842.672 1226.37H1200L714.137 519.284H714.163ZM569.165 687.828L521.697 619.934L144.011 79.6944H306.615L611.412 515.685L658.88 583.579L1055.08 1150.3H892.476L569.165 687.854V687.828Z"/>
+                </svg>
+            </a>
+            <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn">
+                <i class="fab fa-linkedin"></i>
+            </a>
+        </div>
+    
+    </footer>
+
+    <script>
+       const translations = {
+    fr: {
+        "nav-home": "Accueil",
+        "nav-about": "À Propos",
+        "nav-services": "Services",
+        "nav-contact": "Contact",
+        "hero-text": "Trouvez des professionnels qualifiés, de confiance et disponibles près de chez vous",
+        "about-welcome": "Bienvenue sur",
+        "about-text": "À la recherche de professionnels fiables et qualifiés pour vos besoins quotidiens ? Dari Services est là pour vous aider à trouver les meilleurs services à proximité de chez vous.",
+        "services-title": "Nos Services",
+        "service-plomberie": "Plomberie",
+        "service-electricite": "Électricité",
+        "service-reparations": "Réparations",
+        "service-peinture": "Peinture",
+        "service-maconnerie": "Maçonnerie",
+        "service-jardinage": "Jardinage",
+        "service-nettoyage": "Nettoyage",
+        "service-demenagement": "Déménagement",
+        "service-evenementiel": "Organisation des événements",
+        "service-baby-sitting": "Garde d'enfants",
+        "service-coaching": "Coaching",
+        "service-esthetique": "Esthétique",
+        "client-title": "Vous êtes client ?",
+        "step-1": "1",
+        "publish-request": "Publier votre demande",
+        "describe-need": "Décrivez votre besoin",
+        "step-2": "2",
+        "professionals-respond": "Les professionnels vous répondent",
+        "compare-offers": "Comparez les offres venant des professionnels de votre commune",
+        "step-3": "3",
+        "choose-offer": "Choisissez la meilleure offre",
+        "select-meeting": "Sélectionnez celui que vous souhaitez rencontrer",
+        "my-account-button": "Mon compte",
+        "professional-title": "Vous êtes professionnel ?",
+        "create-profile": "Créer votre profil gratuit",
+        "set-services": "Paramétrez vos services, réalisations et description pour améliorer votre visibilité",
+        "get-new-clients": "Obtenez de nouveaux clients",
+        "receive-notifications": "Recevez des notifications et emails pour chaque demande venant de votre périmètre",
+        "join-community": "Rejoindre la communauté",
+        "collect-feedback": "Collectez des feedbacks, échangez avec votre marché et partagez des connaissances avec des collègues",
+        "app-heading": "Téléchargez notre application",
+        "app-description": "Profitez de tous nos services en un clic ! Trouvez des professionnels de confiance près de chez vous grâce à notre application.",
+        "download-buttons": "Téléchargez maintenant",
+        "app-store": "Télécharger sur l'App Store",
+        "google-play": "Télécharger sur Google Play",
+        "phone-image": "Mockup Téléphone",
+        "contact-title": "Contactez-Nous",
+        "label-name": "Nom :",
+        "label-email": "Email :",
+        "label-message": "Message :",
+        "button-send": "Envoyer",
+         "copyright": "&copy; 2025 Dari Services. Tous droits réservés."
+    },
+    ar: {
+        "nav-home": "الصفحة الرئيسية",
+        "nav-about": "عن الموقع",
+        "nav-services": "الخدمات",
+        "nav-contact": "اتصل بنا",
+        "hero-text": "ابحث عن محترفين مؤهلين وموثوقين ومتوافرين بالقرب منك",
+        "about-welcome": "مرحبًا بك في",
+        "about-text": "هل تبحث عن محترفين موثوقين وذوي كفاءة لاحتياجاتك اليومية؟ Dari Services هنا لمساعدتك في العثور على أفضل الخدمات بالقرب منك.",
+        "services-title": "خدماتنا",
+        "service-plomberie": "السباكة",
+        "service-electricite": "الكهرباء",
+        "service-reparations": "الإصلاحات",
+        "service-peinture": "الدهانات",
+        "service-maconnerie": "البناء",
+        "service-jardinage": "البستنة",
+        "service-nettoyage": "التنظيف",
+        "service-demenagement": "الترحيل",
+        "service-evenementiel": "تنظيم المناسبات",
+        "service-baby-sitting": "رعاية الأطفال",
+        "service-coaching": "التدريب",
+        "service-esthetique": "التجميل",
+        "client-title": "أنت عميل؟",
+        "step-1": "1",
+        "publish-request": "انشر طلبك",
+        "describe-need": "وصف حاجتك",
+        "step-2": "2",
+        "professionals-respond": "المهنيون يردون عليك",
+        "compare-offers": "قارن العروض من المهنيين في منطقتك",
+        "step-3": "3",
+        "choose-offer": "اختر أفضل عرض",
+        "select-meeting": "اختر الشخص الذي ترغب في لقائه",
+        "my-account-button": "حسابي",
+        "professional-title": "أنت محترف؟",
+        "create-profile": "أنشئ ملفك الشخصي المجاني",
+        "set-services": "قم بتحديد خدماتك، وإنجازاتك، ووصفك لتحسين ظهورك",
+        "get-new-clients": "احصل على عملاء جدد",
+        "receive-notifications": "تلقى إشعارات ورسائل بريدية عن كل طلب قادم من منطقتك",
+        "join-community": "انضم إلى المجتمع",
+        "collect-feedback": "جمع الملاحظات، التبادل مع السوق الخاص بك، ومشاركة المعرفة مع الزملاء",
+        "app-heading": "قم بتحميل تطبيقنا",
+        "app-description": "استمتع بكل خدماتنا بنقرة واحدة! ابحث عن محترفين موثوقين بالقرب منك من خلال تطبيقنا.",
+        "download-buttons": "تحميل الآن",
+        "app-store": "تحميل من متجر التطبيقات",
+        "google-play": "تحميل من جوجل بلاي",
+        "phone-image": "محاكاة الهاتف",
+        "contact-title": "اتصل بنا",
+        "label-name": "الاسم :",
+        "label-email": "البريد الإلكتروني :",
+        "label-message": "الرسالة :",
+        "button-send": "إرسال",
+        "copyright": " 2025 Dari Services  جميع الحقوق محفوظة."
+    }
+};
+function changeLanguage() {
+    const lang = document.getElementById('lang-select').value;
+    const elements = document.querySelectorAll('[data-translate]');
+    
+    // Change la langue du body pour l'alignement de droite à gauche (RTL)
+    document.body.setAttribute('lang', lang);
+    
+    // Change le contenu des éléments traduits
+    elements.forEach((element) => {
+        const key = element.getAttribute('data-translate');
+        element.textContent = translations[lang][key] || element.textContent;
+    });
+    
+    // Applique le sens de lecture (rtl ou ltr)
+    if (lang === "ar") {
+        document.body.style.direction = "rtl";  // Pour l'arabe (droite à gauche)
+    } else {
+        document.body.style.direction = "ltr";  // Pour les autres langues (gauche à droite)
+    }
+}
+
+
+    </script>
+    
+       
+</body>
+</html>
