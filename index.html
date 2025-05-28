@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dari Services</title>
 
-   <style>
+    <style>
 
     * {
     box-sizing: border-box;
@@ -18,7 +18,6 @@ body {
     padding: 0;
     background: #000036;
 }
-
 header {
     background-color: #ffffff;
     color: #333333;
@@ -27,8 +26,63 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1px 2px;
+    padding: 10px 20px;
+    min-width: 320px;
+    width: 100%;
 }
+
+header .logo {
+    margin-right: 20px;
+    position: relative;
+}
+
+header .nav-links {
+    display: flex;
+    justify-content: flex-start;
+    gap: 30px;
+    align-items: center;
+}
+
+header .lang-select {
+    background-color: #003366;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-left: 10px; /* Ajuste l'espace à gauche du bouton */
+}
+
+/* Style spécifique pour mobile */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; /* Aligne le contenu en colonne sur mobile */
+        align-items: center; /* Centre les éléments */
+        justify-content: center; /* Centre le contenu */
+    }
+
+    header .logo {
+        margin-bottom: 20px; /* Espace sous le logo */
+    }
+
+    header .nav-links {
+        gap: 15px; /* Réduit l'espacement entre les éléments */
+        font-size: 1.2em; /* Ajuste la taille du texte */
+        width: 100%;
+        justify-content: center; /* Centre les liens */
+    }
+
+    header .lang-select {
+        position: absolute; /* Fixe le bouton en bas */
+        bottom: 20px; /* Place le bouton au bas de l'écran */
+        background-color: #003366;
+        padding: 10px;
+        border-radius: 5px;
+        font-size: 1.2em;
+        left: 50%;
+        transform: translateX(-50%); /* Centrer le bouton horizontalement */
+    }
+}
+
+
+
 
 nav ul {
     list-style-type: none;
@@ -109,79 +163,128 @@ nav ul li a {
     border: 1px solid #000000;
     margin: 5px;
 }
+ .client ul, .professional ul {
+     list-style-type: none;
+     padding: 0;
+     margin: 0;
+     display: flex;
+     justify-content: space-around;
+     text-align: center;
+ }
+ 
+ .client ul li, .professional ul li {
+     padding: 20px;
+     border: 1px solid #0b0033;
+     margin: 5px;
+     flex: 1;
+ }
+ 
+ .client ul li strong, .professional ul li strong {
+     font-size: 24px;
+     color: #1E90FF;
+ }
+ 
+ .client button, .professional button {
+     display: block;
+     margin: 20px auto;
+     padding: 10px 20px;
+     background-color: #68aef3;
+     color: white;
+     border: none;
+     border-radius: 5px;
+     cursor: pointer;
+     font-size: 16px;
+ }
+ 
+ .client button:hover, .professional button:hover {
+     background-color: #1C86EE;
+ }
+ 
+.client, .professional {
+    background-color: #ffffff;
+    padding: 40px 20px;
+    margin: 40px auto;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(255, 0, 0, 0.05);
+}
+
+.client h2, .professional h2 {
+    font-size: 2em;
+    color: #03015a;
+    margin-bottom: 30px;
+}
 
 .client ul, .professional ul {
-    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
     padding: 0;
     margin: 0;
-    display: flex;
-    justify-content: space-around;
-    text-align: center;
-    flex-wrap: wrap;  /* Permet aux éléments de se déplacer sur une nouvelle ligne si nécessaire */
-    align-items: stretch; /* Aligne tous les <li> à la même hauteur */
+    list-style: none;
 }
 
 .client ul li, .professional ul li {
-    padding: 20px;
-    border: 1px solid #0b0033;
-    margin: 5px;
-    flex: 1;
-    min-width: 250px; /* Empêche que les éléments deviennent trop petits */
-    max-width: 300px;  /* Limite la largeur sur les grands écrans */
-    box-sizing: border-box;
-
-    /* Uniformiser la hauteur */
-    height: 200px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.client ul li strong, .professional ul li strong {
-    font-size: 24px;
-    color: #1E90FF;
-}
-
-.client button, .professional button {
-    display: block;
-    margin: 20px auto;
-    padding: 10px 20px;
-    background-color: #68aef3;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0;
+    margin: 0;
     text-align: center;
+    width: 220px;
+    flex: none;
+}
+
+.step-icon {
+    font-size: 40px;
+    color: var(--primary-blue);
+    margin-bottom: 10px;
+}
+
+.client ul li span,
+.professional ul li span {
+    display: block;
+    margin: 4px 0;
+    font-size: 1em;
+    color: var(--text-color);
+}
+
+/* ================================
+   Boutons
+================================ */
+.client button, .professional button {
+    margin-top: 25px;
+    padding: 12px 30px;
+    font-size: 1em;
+    background-color: #007bff; /* Couleur bleue comme l'image */
+    color: white; /* Texte en blanc */
+    border: 2px solid #007bff; /* Bordure bleue */
+    border-radius: 8px; /* Coins arrondis */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .client button:hover, .professional button:hover {
-    background-color: #1C86EE;
+    background-color: #0056b3; /* Changement de couleur lors du survol */
+    transform: scale(1.05); /* Légère agrandissement lors du survol */
 }
 
-/* Media Query pour mobile */
-@media (max-width: 768px) {
-    .client ul, .professional ul {
-        flex-direction: column;  /* Change la direction en colonne sur mobile */
-        align-items: center;  /* Centre les éléments sur mobile */
-    }
-
-    .client ul li, .professional ul li {
-        flex: none;  /* Empêche les éléments de prendre trop de place sur mobile */
-        max-width: 100%;  /* Les éléments prendront toute la largeur disponible sur mobile */
-        margin-bottom: 20px;
-        height: auto; /* Laisse la hauteur s’adapter au contenu sur mobile */
-    }
-
-    .client button, .professional button {
-        width: 100%;  /* Les boutons prennent toute la largeur sur mobile */
-    }
-
-    .client ul li strong, .professional ul li strong {
-        font-size: 20px;  /* Réduction de la taille du texte sur mobile */
-    }
+.btn-mon-compte {
+    background-color: var(--primary-blue);
+    color: rgb(255, 0, 0);
+    font-size: 1.2em;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
+.btn-mon-compte:hover {
+    background-color: var(--secondary-blue);
+    transform: scale(1.05);
+}
 
 form {
     display: flex;
@@ -691,11 +794,7 @@ button {
 button:hover {
     background-color: #4CAF50;
     cursor: pointer;
-}
-
-
-
-          </style>
+}     </style>
              
 
              <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -763,72 +862,164 @@ button:hover {
 </section>
 
          
-            <section class="client" id="client">
-                <h2 data-translate="client-title">Vous êtes client ?</h2>
-                <ul>
-                    <li>
-                        <strong data-translate="step-1">1</strong><br>
-                        <span data-translate="publish-request">Publier votre demande</span><br>
-                        <span data-translate="describe-need">Décrivez votre besoin</span>
-                    </li>
-                    <li>
-                        <strong data-translate="step-2">2</strong><br>
-                        <span data-translate="professionals-respond">Les professionnels vous répondent</span><br>
-                        <span data-translate="compare-offers">Comparez les offres venant des professionnels de votre commune</span>
-                    </li>
-                    <li>
-                        <strong data-translate="step-3">3</strong><br>
-                        <span data-translate="choose-offer">Choisissez la meilleure offre</span><br>
-                        <span data-translate="select-meeting">Sélectionnez celui que vous souhaitez rencontrer</span>
-                    </li>
-                </ul>
-                <!-- Bouton pour afficher le modal -->
-                <button onclick="openModal()" data-translate="my-account-button">Mon compte</button>
-            </section>
-            
-      <!-- Modal pour connexion et création de compte -->
-       <div id="modal" class="modal">
-        <div class="modal-content">
-            <span class="close" id="closeBtn">&times;</span>
-    
-            <!-- Formulaire de connexion -->
-            <div id="login-form">
-                <h3>Connexion</h3>
-                <form>
-                    <label for="email">Email :</label>
-                    <input type="email" id="email" name="email" required>
-                    <label for="password">Mot de passe :</label>
-                    <input type="password" id="password" name="password" required>
-                    <a href="#" class="forgot-password">Mot de passe oublié ?</a>
-                    <button type="submit">Se connecter</button>
-                </form>
-                <p>Pas encore de compte ? <a href="#" onclick="showRegisterForm()">Créer un compte</a></p>
-            </div>
-    
-            <!-- Formulaire d'inscription -->
-            <div id="register-form" style="display: none;">
-                <h3>Créer un compte</h3>
-                <form>
-                    <label for="firstname">Prénom :</label>
-                    <input type="text" id="firstname" name="firstname" required>
-                    <label for="lastname">Nom :</label>
-                    <input type="text" id="lastname" name="lastname" required>
-                    <label for="phone">Numéro de téléphone :</label>
-                    <input type="tel" id="phone" name="phone" required>
-                    <label for="email">Email :</label>
-                    <input type="email" id="email-register" name="email" required>
-                    <label for="password">Mot de passe :</label>
-                    <input type="password" id="password-register" name="password" required>
-                    <label for="address">Adresse :</label>
-                    <input type="text" id="address" name="address" required>
-                    <button type="button" onclick="shareLocation()">Partager ma localisation</button>
-                    <button type="submit">S'inscrire</button>
-                </form>
-                <p>Déjà un compte ? <a href="#" onclick="showLoginForm()">Se connecter</a></p>
-            </div>
-        </div>
+      <section class="client" id="client">
+  <h2 data-translate="you-are-client">Vous êtes client ?</h2>
+  <ul>
+    <li>
+      <div class="step-icon"><i class="fas fa-pen-to-square"></i></div>
+      <span data-translate="publish-your-request">Publier votre demande</span>
+      <span data-translate="describe-your-need">Décrivez votre besoin</span>
+    </li>
+    <li>
+      <div class="step-icon"><i class="fas fa-comments"></i></div>
+      <span data-translate="professionals-respond">Les professionnels vous répondent</span>
+      <span data-translate="compare-offers">Comparez les offres</span>
+    </li>
+    <li>
+      <div class="step-icon"><i class="fas fa-check-circle"></i></div>
+      <span data-translate="choose-best-offer">Choisissez la meilleure offre</span>
+      <span data-translate="select-professional">Sélectionnez le professionnel</span>
+    </li>
+  </ul>
+  <button onclick="openModal()" data-translate="my-account-button">Mon compte</button>
+</section>
+<!-- Message de réussite pour la connexion -->
+<div id="loginSuccessMessage" style="display: none; color: green; font-weight: bold; text-align: center; position: fixed; top: 0; left: 0; width: 100%; background-color: #e0ffe0; padding: 10px; z-index: 9999;">
+  ✅ Connexion réussie !
+</div>
+
+<!-- Message de réussite pour l'inscription -->
+<div id="signupSuccessMessage" style="display: none; color: green; font-weight: bold; text-align: center; position: fixed; top: 0; left: 0; width: 100%; background-color: #e0ffe0; padding: 10px; z-index: 9999;">
+  ✅ Inscription réussie !
+</div>
+
+<!-- Modal pour connexion et création de compte -->
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <span class="close" id="closeBtn">&times;</span>
+
+    <!-- Formulaire de connexion -->
+    <div id="login-form">
+      <h3 data-translate="login-title">Connexion</h3>
+      <form onsubmit="handleLogin(event)">
+        <label for="email" data-translate="email-label">Email :</label>
+        <input type="email" id="email" name="email" required>
+        <label for="password" data-translate="password-label">Mot de passe :</label>
+        <input type="password" id="password" name="password" required>
+        <a href="#" class="forgot-password" data-translate="forgot-password">Mot de passe oublié ?</a>
+        <button type="submit" data-translate="login-button">Se connecter</button>
+      </form>
+      <p data-translate="no-account">Pas encore de compte ? <a href="#" onclick="showRegisterForm()" data-translate="create-account">Créer un compte</a></p>
     </div>
-   
+
+    <!-- Formulaire d'inscription -->
+    <div id="register-form" style="display: none;">
+      <h3 data-translate="register-title">Créer un compte</h3>
+      <form onsubmit="handleSignup(event)">
+        <label for="firstname" data-translate="first-name-label">Prénom :</label>
+        <input type="text" id="firstname" name="firstname" required>
+        <label for="lastname" data-translate="last-name-label">Nom :</label>
+        <input type="text" id="lastname" name="lastname" required>
+        <label for="phone" data-translate="phone-label">Numéro de téléphone :</label>
+        <input type="tel" id="phone" name="phone" required>
+        <label for="email-register" data-translate="email-register-label">Email :</label>
+        <input type="email" id="email-register" name="email" required>
+        <label for="password-register" data-translate="password-register-label">Mot de passe :</label>
+        <input type="password" id="password-register" name="password" required>
+
+        <!-- Champ pour confirmer le mot de passe -->
+        <label for="confirm-password-register" data-translate="confirm-password-register-label">Confirmer le mot de passe :</label>
+        <input type="password" id="confirm-password-register" name="confirmPassword" required>
+
+        <label for="address" data-translate="address-label">Adresse :</label>
+        <input type="text" id="address" name="address" required>
+        <button type="button" onclick="shareLocation()" data-translate="share-location">Partager ma localisation</button>
+        <button type="submit" data-translate="register-button">S'inscrire</button>
+      </form>
+      <p data-translate="already-account">Déjà un compte ? <a href="#" onclick="showLoginForm()" data-translate="login-link">Se connecter</a></p>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Fonction pour ouvrir la modale d'inscription
+  function showRegisterForm() {
+    document.getElementById('login-form').style.display = 'none';
+    document.getElementById('register-form').style.display = 'block';
+  }
+
+  // Fonction pour ouvrir la modale de connexion
+  function showLoginForm() {
+    document.getElementById('register-form').style.display = 'none';
+    document.getElementById('login-form').style.display = 'block';
+  }
+
+  // Fonction de gestion de la connexion (simulée côté client)
+  function handleLogin(event) {
+    event.preventDefault(); // Empêche la soumission du formulaire par défaut
+
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+
+    // Simuler la connexion
+    alert(`Connexion réussie !\nEmail: ${email}`);
+
+    // Affichage du message de succès pour la connexion en haut de la page
+    document.getElementById('loginSuccessMessage').style.display = "block";
+    setTimeout(function() {
+      document.getElementById('loginSuccessMessage').style.display = "none"; // Cacher après 5 secondes
+    }, 5000);
+
+    // Fermer la modale après connexion
+    closeModal();
+  }
+
+  // Fonction de gestion de l'inscription (simulée côté client)
+  function handleSignup(event) {
+    event.preventDefault(); // Empêche la soumission du formulaire par défaut
+
+    const firstname = document.getElementById('firstname').value;
+    const lastname = document.getElementById('lastname').value;
+    const phone = document.getElementById('phone').value;
+    const email = document.getElementById('email-register').value;
+    const password = document.getElementById('password-register').value;
+    const confirmPassword = document.getElementById('confirm-password-register').value; // Confirmation du mot de passe
+    const address = document.getElementById('address').value;
+
+    // Validation de la confirmation du mot de passe
+    if (password !== confirmPassword) {
+      alert('Les mots de passe ne correspondent pas.');
+      return;
+    }
+
+    // Simuler l'inscription
+    alert(`Inscription réussie !\nNom: ${firstname} ${lastname}\nEmail: ${email}\nTéléphone: ${phone}`);
+
+    // Affichage du message de succès pour l'inscription en haut de la page
+    document.getElementById('signupSuccessMessage').style.display = "block";
+    setTimeout(function() {
+      document.getElementById('signupSuccessMessage').style.display = "none"; // Cacher après 5 secondes
+    }, 5000);
+
+    // Fermer la modale après inscription
+    closeModal();
+  }
+
+  // Fonction pour fermer les modales
+  function closeModal() {
+    document.getElementById('modal').style.display = "none";
+  }
+
+  // Fermer la modale si l'utilisateur clique en dehors de la boîte
+  window.onclick = function(event) {
+    if (event.target == document.getElementById('modal')) {
+      closeModal();
+    }
+  }
+</script>
+
+
+
     
     <script>
     // Ouvre le modal
@@ -871,87 +1062,175 @@ button:hover {
     }
     </script>
     
-    
-     
-     <section class="professional" id="professional">
-        <h2 data-translate="professional-title">Vous êtes professionnel ?</h2>
-        <ul>
-            <li>
-                <strong data-translate="step-1">1</strong><br>
-                <span data-translate="create-profile">Créer votre profil gratuit</span><br>
-                <span data-translate="set-services">Paramétrez vos services, réalisations et description pour améliorer votre visibilité</span>
-            </li>
-            <li>
-                <strong data-translate="step-2">2</strong><br>
-                <span data-translate="get-new-clients">Obtenez de nouveaux clients</span><br>
-                <span data-translate="receive-notifications">Recevez des notifications et emails pour chaque demande venant de votre périmètre</span>
-            </li>
-            <li>
-                <strong data-translate="step-3">3</strong><br>
-                <span data-translate="join-community">Rejoindre la communauté</span><br>
-                <span data-translate="collect-feedback">Collectez des feedbacks, échangez avec votre marché et partagez des connaissances avec des collègues</span>
-            </li>
-        </ul>
-        <button onclick="openLoginModal()" data-translate="my-account-button">Mon compte</button>
-    </section>
-    
-   
-    <!-- Modale pour la connexion -->
-    <div id="loginModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <h2>Connexion</h2>
-            <form id="loginForm" action="login.php" method="POST">
-                <label for="loginEmail">Email :</label>
-                <input type="email" id="loginEmail" name="loginEmail" required placeholder="Votre email">
-                <label for="loginPassword">Mot de passe :</label>
-                <input type="password" id="loginPassword" name="loginPassword" required placeholder="Votre mot de passe">
-                <button type="submit">Se connecter</button>
-            </form>
-            <p>Vous n'avez pas de compte ? <a href="#" onclick="openSignupModal()">Créer un compte</a></p>
-        </div>
-    </div>
-    
-    <!-- Modale pour l'inscription -->
-    <div id="signupModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <h2>Créer un compte professionnel</h2>
-            <form id="signupForm" action="signup.php" method="POST" enctype="multipart/form-data">
-                <label for="firstName">Prénom :</label>
-                <input type="text" id="firstName" name="firstName" required placeholder="Votre prénom">
-    
-                <label for="lastName">Nom :</label>
-                <input type="text" id="lastName" name="lastName" required placeholder="Votre nom">
-    
-                <label for="email">Email :</label>
-                <input type="email" id="email" name="email" required placeholder="Votre email professionnel">
-    
-                <label for="phone">Numéro de téléphone :</label>
-                <input type="tel" id="phone" name="phone" required placeholder="Votre numéro de téléphone">
-    
-                <label for="cv">CV (Télécharger) :</label>
-                <input type="file" id="cv" name="cv" accept=".pdf,.docx" required>
-    
-                <label for="availability">Disponibilité :</label>
-                <input type="text" id="availability" name="availability" required placeholder="Ex : Disponible immédiatement, ou 1 mois à partir de...">
-    
-                <label for="professionalStatus">Situation professionnelle :</label>
-                <input type="text" id="professionalStatus" name="professionalStatus" required placeholder="Ex : En recherche d'emploi, Freelance, Salarié, etc.">
-    
-                <label for="password">Mot de passe :</label>
-                <input type="password" id="password" name="password" required placeholder="Votre mot de passe">
-    
-                <label for="confirmPassword">Confirmer le mot de passe :</label>
-                <input type="password" id="confirmPassword" name="confirmPassword" required placeholder="Confirmer votre mot de passe">
-    
-                <button type="submit">Créer un compte</button>
-            </form>
-        </div>
-    </div>
-    
- 
-    
+    <section class="professional" id="professional">
+  <h2 data-translate="you-are-professional">Vous êtes professionnel ?</h2>
+  <ul>
+    <li>
+      <div class="step-icon"><i class="fas fa-user-plus"></i></div>
+      <span data-translate="create-your-profile">Créer votre profil gratuit</span>
+      <span data-translate="add-your-services">Ajoutez vos services</span>
+    </li>
+    <li>
+      <div class="step-icon"><i class="fas fa-bell"></i></div>
+      <span data-translate="get-clients">Obtenez des clients</span>
+      <span data-translate="receive-notifications">Recevez des notifications</span>
+    </li>
+    <li>
+      <div class="step-icon"><i class="fas fa-people-group"></i></div>
+      <span data-translate="join-community">Rejoignez la communauté</span>
+      <span data-translate="share-with-others">Partagez avec d'autres pros</span>
+    </li>
+  </ul>
+  <button onclick="openLoginModal()" data-translate="my-account-button">Mon compte</button>
+</section>
+<!-- Message de réussite pour la connexion -->
+<div id="loginSuccessMessage" style="display: none; color: green; font-weight: bold; text-align: center; position: fixed; top: 0; left: 0; width: 100%; background-color: #e0ffe0; padding: 10px; z-index: 9999;">
+  ✅ Connexion réussie !
+</div>
+
+<!-- Message de réussite pour l'inscription -->
+<div id="signupSuccessMessage" style="display: none; color: green; font-weight: bold; text-align: center; position: fixed; top: 0; left: 0; width: 100%; background-color: #e0ffe0; padding: 10px; z-index: 9999;">
+  ✅ Inscription réussie !
+</div>
+
+<!-- Modale pour la connexion -->
+<div id="loginModal" class="modal" style="display: none;">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <h3 data-translate="login-title">Connexion Professionnel</h3>
+    <form id="loginForm" onsubmit="handleLogin(event)">
+      <label for="email-professional" data-translate="email-label">Email :</label>
+      <input type="email" id="email-professional" name="email" required>
+
+      <label for="password-professional" data-translate="password-label">Mot de passe :</label>
+      <input type="password" id="password-professional" name="password" required>
+
+      <a href="#" class="forgot-password" data-translate="forgot-password">Mot de passe oublié ?</a>
+
+      <button type="submit" data-translate="login-button">Se connecter</button>
+    </form>
+    <p data-translate="no-account">Pas encore de compte ? <a href="#" onclick="openSignupModal()" data-translate="create-account">Créer un compte</a></p>
+  </div>
+</div>
+
+<!-- Modale pour l'inscription professionnel -->
+<div id="signupModal" class="modal" style="display: none;">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <h2 data-translate="create-account-title">Créer un compte professionnel</h2>
+    <form id="signupForm" onsubmit="handleSignup(event)">
+      <label for="firstName" data-translate="first-name-label">Prénom :</label>
+      <input type="text" id="firstName" name="firstName" required placeholder="Votre prénom">
+
+      <label for="lastName" data-translate="last-name-label">Nom :</label>
+      <input type="text" id="lastName" name="lastName" required placeholder="Votre nom">
+
+      <label for="phone" data-translate="phone-label">Numéro de téléphone :</label>
+      <input type="tel" id="phone" name="phone" required placeholder="Votre numéro de téléphone">
+
+      <label for="email" data-translate="email-register-label">Email :</label>
+      <input type="email" id="email" name="email" required placeholder="Votre email professionnel">
+
+      <label for="cv" data-translate="cv-label">CV (Télécharger) :</label>
+      <input type="file" id="cv" name="cv" accept=".pdf,.docx" required>
+
+      <label for="availability" data-translate="availability-label">Disponibilité :</label>
+      <input type="text" id="availability" name="availability" required placeholder="Ex : Disponible immédiatement, ou 1 mois à partir de...">
+
+      <label for="professionalStatus" data-translate="status-label">Situation professionnelle :</label>
+      <input type="text" id="professionalStatus" name="professionalStatus" required placeholder="Ex : En recherche d'emploi, Freelance, Salarié, etc.">
+
+      <label for="password" data-translate="password-register-label">Mot de passe :</label>
+      <input type="password" id="password" name="password" required placeholder="Votre mot de passe">
+
+      <label for="confirmPassword" data-translate="confirm-password-label">Confirmer le mot de passe :</label>
+      <input type="password" id="confirmPassword" name="confirmPassword" required placeholder="Confirmer votre mot de passe">
+
+      <button type="submit" data-translate="register-button">Créer un compte</button>
+    </form>
+    <p data-translate="already-account">Déjà un compte ? <a href="#" onclick="showLoginForm()" data-translate="login-link">Se connecter</a></p>
+  </div>
+</div>
+
+<script>
+  // Fonction pour ouvrir la modale d'inscription
+  function openSignupModal() {
+    document.getElementById('signupModal').style.display = "block";
+  }
+
+  // Fonction pour fermer les modales
+  function closeModal() {
+    document.getElementById('signupModal').style.display = "none";
+    document.getElementById('loginModal').style.display = "none";
+  }
+
+  // Fonction de gestion de l'inscription (simulée côté client)
+  function handleSignup(event) {
+    event.preventDefault(); // Empêche la soumission du formulaire par défaut
+
+    const firstName = document.getElementById('firstName').value;
+    const lastName = document.getElementById('lastName').value;
+    const phone = document.getElementById('phone').value;
+    const email = document.getElementById('email').value;
+    const cv = document.getElementById('cv').files[0]; // Récupérer le fichier du CV
+    const availability = document.getElementById('availability').value;
+    const professionalStatus = document.getElementById('professionalStatus').value;
+    const password = document.getElementById('password').value;
+    const confirmPassword = document.getElementById('confirmPassword').value;
+
+    // Validation du mot de passe
+    if (password !== confirmPassword) {
+      alert('Les mots de passe ne correspondent pas.');
+      return;
+    }
+
+    // Validation du CV
+    if (!cv) {
+      alert('Veuillez télécharger votre CV.');
+      return;
+    }
+
+    // Simuler l'enregistrement des données côté client
+    alert(`Inscription réussie !\nNom: ${firstName} ${lastName}\nEmail: ${email}\nTéléphone: ${phone}`);
+
+    // Affichage du message de succès pour l'inscription en haut de la page
+    document.getElementById('signupSuccessMessage').style.display = "block";
+    setTimeout(function() {
+      document.getElementById('signupSuccessMessage').style.display = "none"; // Cacher après 5 secondes
+    }, 5000);
+
+    // Fermer la modale après inscription
+    closeModal();
+  }
+
+  // Fonction de gestion de la connexion (simulée côté client)
+  function handleLogin(event) {
+    event.preventDefault(); // Empêche la soumission du formulaire par défaut
+
+    const email = document.getElementById('email-professional').value;
+    const password = document.getElementById('password-professional').value;
+
+    // Simuler la connexion
+    alert(`Connexion réussie !\nEmail: ${email}`);
+
+    // Affichage du message de succès pour la connexion en haut de la page
+    document.getElementById('loginSuccessMessage').style.display = "block";
+    setTimeout(function() {
+      document.getElementById('loginSuccessMessage').style.display = "none"; // Cacher après 5 secondes
+    }, 5000);
+
+    // Fermer la modale après connexion
+    closeModal();
+  }
+
+  // Fermer la modale si l'utilisateur clique en dehors de la boîte
+  window.onclick = function(event) {
+    if (event.target == document.getElementById('signupModal') || event.target == document.getElementById('loginModal')) {
+      closeModal();
+    }
+  }
+</script>
+
    
     <script>
     // Ouvrir la modale de connexion
@@ -1007,11 +1286,14 @@ function showSignupForm() {
 
 
 
-
+<!-- Message de confirmation après l'envoi -->
+<div id="contactSuccessMessage" style="display: none; color: green; font-weight: bold; text-align: center; position: fixed; top: 0; left: 0; width: 100%; background-color: #e0ffe0; padding: 10px; z-index: 9999;">
+  ✅ Votre demande a bien été reçue, nous vous contacterons bientôt !
+</div>
 
 <section class="contact" id="contact">
     <h2 data-translate="contact-title">Contactez-Nous</h2>
-    <form>
+    <form onsubmit="handleContactForm(event)">
         <label for="name" data-translate="label-name">Nom :</label>
         <input type="text" id="name" name="name" required>
         
@@ -1024,6 +1306,32 @@ function showSignupForm() {
         <button type="submit" data-translate="button-send">Envoyer</button>
     </form>
 </section>
+
+<script>
+  // Fonction de gestion du formulaire de contact
+  function handleContactForm(event) {
+    event.preventDefault(); // Empêche la soumission du formulaire par défaut
+
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
+
+    // Simuler l'envoi du message (tu peux remplacer cela par une vraie fonction d'envoi)
+    alert(`Message envoyé !\nNom: ${name}\nEmail: ${email}\nMessage: ${message}`);
+
+    // Affichage du message de confirmation en haut de la page
+    document.getElementById('contactSuccessMessage').style.display = "block";
+
+    // Cacher le message après 5 secondes
+    setTimeout(function() {
+      document.getElementById('contactSuccessMessage').style.display = "none";
+    }, 5000);
+
+    // Réinitialiser le formulaire
+    document.querySelector('form').reset();
+  }
+</script>
+
 
 <script>
     // Faire une requête GET à l'URL du back-end pour récupérer les utilisateurs
@@ -1128,7 +1436,9 @@ li.textContent = `${user.name} - ${user.email}`;
         "label-email": "Email :",
         "label-message": "Message :",
         "button-send": "Envoyer",
-         "copyright": "&copy; 2025 Dari Services. Tous droits réservés."
+         "copyright": "&copy; 2025 Dari Services. Tous droits réservés.",
+        "create-account": "Créer un compte"
+
     },
     ar: {
         "nav-home": "الصفحة الرئيسية",
@@ -1180,7 +1490,64 @@ li.textContent = `${user.name} - ${user.email}`;
         "label-email": "البريد الإلكتروني :",
         "label-message": "الرسالة :",
         "button-send": "إرسال",
-        "copyright": " 2025 Dari Services  جميع الحقوق محفوظة."
+        "copyright": " 2025 Dari Services  جميع الحقوق محفوظة.",
+          "you-are-client": "هل أنت عميل؟",
+  "publish-your-request": "نشر طلبك",
+  "describe-your-need": "وصف حاجتك",
+  "professionals-respond": "المحترفون يردون عليك",
+  "compare-offers": "قارن العروض",
+  "choose-best-offer": "اختر أفضل عرض",
+  "select-professional": "اختر المحترف",
+  "my-account-button": "حسابي",
+  "login-title": "تسجيل الدخول",
+  "email-label": "البريد الإلكتروني :",
+  "password-label": "كلمة المرور :",
+  "forgot-password": "هل نسيت كلمة المرور؟",
+  "login-button": "تسجيل الدخول",
+  "no-account": "ليس لديك حساب؟",
+  "create-account": "إنشاء حساب",
+  "register-title": "إنشاء حساب",
+  "first-name-label": "الاسم الأول :",
+  "last-name-label": "الاسم :",
+  "phone-label": "رقم الهاتف :",
+  "email-register-label": "البريد الإلكتروني :",
+  "password-register-label": "كلمة المرور :",
+  "address-label": "العنوان :",
+  "share-location": "مشاركة موقعي",
+  "register-button": "التسجيل",
+  "already-account": "هل لديك حساب؟",
+  "login-link": "تسجيل الدخول",
+   "you-are-professional": "هل أنت محترف؟",
+  "create-your-profile": "أنشئ ملفك الشخصي المجاني",
+  "add-your-services": "أضف خدماتك",
+  "get-clients": "احصل على عملاء",
+  "receive-notifications": "استلم الإشعارات",
+  "join-community": "انضم إلى المجتمع",
+  "share-with-others": "شارك مع محترفين آخرين",
+  
+  // Modal Login Section
+  "my-account-button": "حسابي",
+  "login-title": "تسجيل الدخول",
+  "email-label": "البريد الإلكتروني :",
+  "password-label": "كلمة المرور :",
+  "login-button": "تسجيل الدخول",
+  "no-account": "ليس لديك حساب؟",
+  "create-account": "إنشاء حساب",
+  
+  // Modal Signup Section
+  "create-account-title": "إنشاء حساب مهني",
+  "first-name-label": "الاسم الأول :",
+  "last-name-label": "الاسم :",
+  "email-register-label": "البريد الإلكتروني :",
+  "phone-label": "رقم الهاتف :",
+  "cv-label": "السيرة الذاتية (تحميل) :",
+  "availability-label": "التوفر :",
+  "status-label": "الحالة المهنية :",
+  "password-register-label": "كلمة المرور :",
+  "confirm-password-label": "تأكيد كلمة المرور :",
+  "register-button": "إنشاء الحساب",
+    "create-account": "إنشاء حساب"
+
     }
 };
 function changeLanguage() {
@@ -1204,7 +1571,19 @@ function changeLanguage() {
     }
 }
 
+function translatePage() {
+  const elements = document.querySelectorAll('[data-translate]');
+  
+  elements.forEach((element) => {
+    const key = element.getAttribute('data-translate');
+    if (translations[key]) {
+      element.innerText = translations[key];
+    }
+  });
+}
 
+// Appeler la fonction de traduction pour traduire tout le contenu
+translatePage();
     </script>
     
        
