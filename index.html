@@ -485,7 +485,7 @@ img.logo {
   font-size: 50px; /* Taille par défaut pour PC */
   color: #ffffff;
   font-weight: bold;
-  animation: scroll-text 15s linear infinite;
+  animation: scroll-text 9s linear infinite;
 }
 
 /* Pour les petits écrans (mobile, tablettes) */
@@ -1397,171 +1397,194 @@ li.textContent = `${user.name} - ${user.email}`;
     </footer>
 
     <script>
-       const translations = {
-    fr: {
-        "nav-home": "Accueil",
-        "nav-about": "À Propos",
-        "nav-services": "Services",
-        "nav-contact": "Contact",
-        "hero-text": "Trouvez des professionnels qualifiés, de confiance et disponibles près de chez vous",
-        "about-welcome": "Bienvenue sur",
-        "about-text": "À la recherche de professionnels fiables et qualifiés pour vos besoins quotidiens ? Dari Services est là pour vous aider à trouver les meilleurs services à proximité de chez vous.",
-        "services-title": "Nos Services",
-        "service-plomberie": "Plomberie",
-        "service-electricite": "Électricité",
-        "service-reparations": "Réparations",
-        "service-peinture": "Peinture",
-        "service-maconnerie": "Maçonnerie",
-        "service-jardinage": "Jardinage",
-        "service-nettoyage": "Nettoyage",
-        "service-demenagement": "Déménagement",
-        "service-evenementiel": "Organisation des événements",
-        "service-baby-sitting": "Garde d'enfants",
-        "service-coaching": "Coaching",
-        "service-esthetique": "Esthétique",
-        "client-title": "Vous êtes client ?",
-        "step-1": "1",
-        "publish-request": "Publier votre demande",
-        "describe-need": "Décrivez votre besoin",
-        "step-2": "2",
-        "professionals-respond": "Les professionnels vous répondent",
-        "compare-offers": "Comparez les offres venant des professionnels de votre commune",
-        "step-3": "3",
-        "choose-offer": "Choisissez la meilleure offre",
-        "select-meeting": "Sélectionnez celui que vous souhaitez rencontrer",
-        "my-account-button": "Mon compte",
-        "professional-title": "Vous êtes professionnel ?",
-        "create-profile": "Créer votre profil gratuit",
-        "set-services": "Paramétrez vos services, réalisations et description pour améliorer votre visibilité",
-        "get-new-clients": "Obtenez de nouveaux clients",
-        "receive-notifications": "Recevez des notifications et emails pour chaque demande venant de votre périmètre",
-        "join-community": "Rejoindre la communauté",
-        "collect-feedback": "Collectez des feedbacks, échangez avec votre marché et partagez des connaissances avec des collègues",
-        "app-heading": "Téléchargez notre application",
-        "app-description": "Profitez de tous nos services en un clic ! Trouvez des professionnels de confiance près de chez vous grâce à notre application.",
-        "download-buttons": "Téléchargez maintenant",
-        "app-store": "Télécharger sur l'App Store",
-        "google-play": "Télécharger sur Google Play",
-        "phone-image": "Mockup Téléphone",
-        "contact-title": "Contactez-Nous",
-        "label-name": "Nom :",
-        "label-email": "Email :",
-        "label-message": "Message :",
-        "button-send": "Envoyer",
-         "copyright": "&copy; 2025 Dari Services. Tous droits réservés.",
-        "create-account": "Créer un compte"
+      const translations = {
+  fr: {
+    // Navigation
+    "nav-home": "Accueil",
+    "nav-about": "À Propos",
+    "nav-services": "Services",
+    "nav-contact": "Contact",
 
-    },
-    ar: {
-        "nav-home": "الصفحة الرئيسية",
-        "nav-about": "عن الموقع",
-        "nav-services": "الخدمات",
-        "nav-contact": "اتصل بنا",
-        "hero-text": "ابحث عن محترفين مؤهلين وموثوقين ومتوافرين بالقرب منك",
-        "about-welcome": "مرحبًا بك في",
-        "about-text": "هل تبحث عن محترفين موثوقين وذوي كفاءة لاحتياجاتك اليومية؟ Dari Services هنا لمساعدتك في العثور على أفضل الخدمات بالقرب منك.",
-        "services-title": "خدماتنا",
-        "service-plomberie": "السباكة",
-        "service-electricite": "الكهرباء",
-        "service-reparations": "الإصلاحات",
-        "service-peinture": "الدهانات",
-        "service-maconnerie": "البناء",
-        "service-jardinage": "البستنة",
-        "service-nettoyage": "التنظيف",
-        "service-demenagement": "الترحيل",
-        "service-evenementiel": "تنظيم المناسبات",
-        "service-baby-sitting": "رعاية الأطفال",
-        "service-coaching": "التدريب",
-        "service-esthetique": "التجميل",
-        "client-title": "أنت عميل؟",
-        "step-1": "1",
-        "publish-request": "انشر طلبك",
-        "describe-need": "وصف حاجتك",
-        "step-2": "2",
-        "professionals-respond": "المهنيون يردون عليك",
-        "compare-offers": "قارن العروض من المهنيين في منطقتك",
-        "step-3": "3",
-        "choose-offer": "اختر أفضل عرض",
-        "select-meeting": "اختر الشخص الذي ترغب في لقائه",
-        "my-account-button": "حسابي",
-        "professional-title": "أنت محترف؟",
-        "create-profile": "أنشئ ملفك الشخصي المجاني",
-        "set-services": "قم بتحديد خدماتك، وإنجازاتك، ووصفك لتحسين ظهورك",
-        "get-new-clients": "احصل على عملاء جدد",
-        "receive-notifications": "تلقى إشعارات ورسائل بريدية عن كل طلب قادم من منطقتك",
-        "join-community": "انضم إلى المجتمع",
-        "collect-feedback": "جمع الملاحظات، التبادل مع السوق الخاص بك، ومشاركة المعرفة مع الزملاء",
-        "app-heading": "قم بتحميل تطبيقنا",
-        "app-description": "استمتع بكل خدماتنا بنقرة واحدة! ابحث عن محترفين موثوقين بالقرب منك من خلال تطبيقنا.",
-        "download-buttons": "تحميل الآن",
-        "app-store": "تحميل من متجر التطبيقات",
-        "google-play": "تحميل من جوجل بلاي",
-        "phone-image": "محاكاة الهاتف",
-        "contact-title": "اتصل بنا",
-        "label-name": "الاسم :",
-        "label-email": "البريد الإلكتروني :",
-        "label-message": "الرسالة :",
-        "button-send": "إرسال",
-        "copyright": " 2025 Dari Services  جميع الحقوق محفوظة.",
-          "you-are-client": "هل أنت عميل؟",
-  "publish-your-request": "نشر طلبك",
-  "describe-your-need": "وصف حاجتك",
-  "professionals-respond": "المحترفون يردون عليك",
-  "compare-offers": "قارن العروض",
-  "choose-best-offer": "اختر أفضل عرض",
-  "select-professional": "اختر المحترف",
-  "my-account-button": "حسابي",
-  "login-title": "تسجيل الدخول",
-  "email-label": "البريد الإلكتروني :",
-  "password-label": "كلمة المرور :",
-  "forgot-password": "هل نسيت كلمة المرور؟",
-  "login-button": "تسجيل الدخول",
-  "no-account": "ليس لديك حساب؟",
-  "create-account": "إنشاء حساب",
-  "register-title": "إنشاء حساب",
-  "first-name-label": "الاسم الأول :",
-  "last-name-label": "الاسم :",
-  "phone-label": "رقم الهاتف :",
-  "email-register-label": "البريد الإلكتروني :",
-  "password-register-label": "كلمة المرور :",
-  "address-label": "العنوان :",
-  "share-location": "مشاركة موقعي",
-  "register-button": "التسجيل",
-  "already-account": "هل لديك حساب؟",
-  "login-link": "تسجيل الدخول",
-   "you-are-professional": "هل أنت محترف؟",
-  "create-your-profile": "أنشئ ملفك الشخصي المجاني",
-  "add-your-services": "أضف خدماتك",
-  "get-clients": "احصل على عملاء",
-  "receive-notifications": "استلم الإشعارات",
-  "join-community": "انضم إلى المجتمع",
-  "share-with-others": "شارك مع محترفين آخرين",
-  
-  // Modal Login Section
-  "my-account-button": "حسابي",
-  "login-title": "تسجيل الدخول",
-  "email-label": "البريد الإلكتروني :",
-  "password-label": "كلمة المرور :",
-  "login-button": "تسجيل الدخول",
-  "no-account": "ليس لديك حساب؟",
-  "create-account": "إنشاء حساب",
-  
-  // Modal Signup Section
-  "create-account-title": "إنشاء حساب مهني",
-  "first-name-label": "الاسم الأول :",
-  "last-name-label": "الاسم :",
-  "email-register-label": "البريد الإلكتروني :",
-  "phone-label": "رقم الهاتف :",
-  "cv-label": "السيرة الذاتية (تحميل) :",
-  "availability-label": "التوفر :",
-  "status-label": "الحالة المهنية :",
-  "password-register-label": "كلمة المرور :",
-  "confirm-password-label": "تأكيد كلمة المرور :",
-  "register-button": "إنشاء الحساب",
-    "create-account": "إنشاء حساب"
+    // Hero
+    "hero-text": "Trouvez des professionnels qualifiés, de confiance et disponibles près de chez vous",
 
-    }
+    // À propos
+    "about-welcome": "Bienvenue sur",
+    "about-text": "À la recherche de professionnels fiables et qualifiés pour vos besoins quotidiens ? Dari Services est là pour vous aider à trouver les meilleurs services à proximité de chez vous.",
+
+    // Services
+    "services-title": "Nos Services",
+    "service-plomberie": "Plomberie",
+    "service-electricite": "Électricité",
+    "service-reparations": "Réparations",
+    "service-peinture": "Peinture",
+    "service-maconnerie": "Maçonnerie",
+    "service-jardinage": "Jardinage",
+    "service-nettoyage": "Nettoyage",
+    "service-demenagement": "Déménagement",
+    "service-evenementiel": "Organisation des événements",
+    "service-baby-sitting": "Garde d'enfants",
+    "service-coaching": "Coaching",
+    "service-esthetique": "Esthétique",
+
+    // Client Steps
+"you-are-client": "Vous êtes client ?",
+      "publish-your-request": "Publier votre demande",
+      "describe-your-need": "Décrivez votre besoin",
+      "professionals-respond": "Les professionnels vous répondent",
+      "compare-offers": "Comparez les offres",
+      "choose-best-offer": "Choisissez la meilleure offre",
+      "select-professional": "Sélectionnez le professionnel",
+      "my-account-button": "Mon compte",
+
+    // Professionnel
+       "you-are-professional": "Vous êtes professionnel ?",
+      "create-your-profile": "Créer votre profil gratuit",
+      "add-your-services": "Ajoutez vos services",
+      "get-clients": "Obtenez des clients",
+      "receive-notifications": "Recevez des notifications",
+      "join-community": "Rejoignez la communauté",
+      "share-with-others": "Partagez avec d'autres pros",
+      "my-account-button": "Mon compte",
+
+    // Application
+    "app-heading": "Téléchargez notre application",
+    "app-description": "Profitez de tous nos services en un clic ! Trouvez des professionnels de confiance près de chez vous grâce à notre application.",
+    "download-buttons": "Téléchargez maintenant",
+    "app-store": "Télécharger sur l'App Store",
+    "google-play": "Télécharger sur Google Play",
+    "phone-image": "Mockup Téléphone",
+
+    // Contact
+    "contact-title": "Contactez-Nous",
+    "label-name": "Nom :",
+    "label-email": "Email :",
+    "label-message": "Message :",
+    "button-send": "Envoyer",
+
+    // Auth
+    "my-account-button": "Mon compte",
+    "login-title": "Connexion",
+    "email-label": "Email :",
+    "password-label": "Mot de passe :",
+    "forgot-password": "Mot de passe oublié ?",
+    "login-button": "Se connecter",
+    "no-account": "Pas encore de compte ?",
+    "create-account": "Créer un compte",
+    "register-title": "Créer un compte",
+    "first-name-label": "Prénom :",
+    "last-name-label": "Nom :",
+    "phone-label": "Téléphone :",
+    "email-register-label": "Email :",
+    "password-register-label": "Mot de passe :",
+    "confirm-password-label": "Confirmer le mot de passe :",
+    "address-label": "Adresse :",
+    "share-location": "Partager ma position",
+    "register-button": "S'inscrire",
+    "already-account": "Vous avez déjà un compte ?",
+    "login-link": "Connexion",
+    "cv-label": "CV (téléchargement) :",
+    "availability-label": "Disponibilité :",
+    "status-label": "Statut professionnel :",
+
+    // Footer
+    "copyright": "&copy; 2025 Dari Services. Tous droits réservés."
+  },
+
+  ar: {
+    // Navigation
+    "nav-home": "الصفحة الرئيسية",
+    "nav-about": "عن الموقع",
+    "nav-services": "الخدمات",
+    "nav-contact": "اتصل بنا",
+
+    // Hero
+    "hero-text": "ابحث عن محترفين مؤهلين وموثوقين ومتوافرين بالقرب منك",
+
+    // À propos
+    "about-welcome": "مرحبًا بك في",
+    "about-text": "هل تبحث عن محترفين موثوقين وذوي كفاءة لاحتياجاتك اليومية؟ Dari Services هنا لمساعدتك في العثور على أفضل الخدمات بالقرب منك.",
+
+    // Services
+    "services-title": "خدماتنا",
+    "service-plomberie": "السباكة",
+    "service-electricite": "الكهرباء",
+    "service-reparations": "الإصلاحات",
+    "service-peinture": "الدهانات",
+    "service-maconnerie": "البناء",
+    "service-jardinage": "البستنة",
+    "service-nettoyage": "التنظيف",
+    "service-demenagement": "الترحيل",
+    "service-evenementiel": "تنظيم المناسبات",
+    "service-baby-sitting": "رعاية الأطفال",
+    "service-coaching": "التدريب",
+    "service-esthetique": "التجميل",
+//client 
+
+     "you-are-client": "هل أنت زبون؟",
+      "publish-your-request": "انشر طلبك",
+      "describe-your-need": "صف حاجتك",
+      "professionals-respond": "المحترفون يردون عليك",
+      "compare-offers": "قارن العروض",
+      "choose-best-offer": "اختر أفضل عرض",
+      "select-professional": "اختر المحترف",
+      "my-account-button": "حسابي",
+
+    // Professionnel
+  "you-are-professional": "هل أنت محترف؟",
+      "create-your-profile": "أنشئ ملفك الشخصي مجانًا",
+      "add-your-services": "أضف خدماتك",
+      "get-clients": "احصل على عملاء",
+      "receive-notifications": "استقبل الإشعارات",
+      "join-community": "انضم إلى المجتمع",
+      "share-with-others": "تبادل مع محترفين آخرين",
+      "my-account-button": "حسابي",
+
+    // Application
+    "app-heading": "قم بتحميل تطبيقنا",
+    "app-description": "استمتع بكل خدماتنا بنقرة واحدة! ابحث عن محترفين موثوقين بالقرب منك من خلال تطبيقنا.",
+    "download-buttons": "تحميل الآن",
+    "app-store": "تحميل من متجر التطبيقات",
+    "google-play": "تحميل من جوجل بلاي",
+    "phone-image": "محاكاة الهاتف",
+
+    // Contact
+    "contact-title": "اتصل بنا",
+    "label-name": "الاسم :",
+    "label-email": "البريد الإلكتروني :",
+    "label-message": "الرسالة :",
+    "button-send": "إرسال",
+
+    // Auth
+    "my-account-button": "حسابي",
+    "login-title": "تسجيل الدخول",
+    "email-label": "البريد الإلكتروني :",
+    "password-label": "كلمة المرور :",
+    "forgot-password": "هل نسيت كلمة المرور؟",
+    "login-button": "تسجيل الدخول",
+    "no-account": "ليس لديك حساب؟",
+    "create-account": "إنشاء حساب",
+    "register-title": "إنشاء حساب",
+    "first-name-label": "الاسم الأول :",
+    "last-name-label": "الاسم :",
+    "phone-label": "رقم الهاتف :",
+    "email-register-label": "البريد الإلكتروني :",
+    "password-register-label": "كلمة المرور :",
+    "confirm-password-label": "تأكيد كلمة المرور :",
+    "address-label": "العنوان :",
+    "share-location": "مشاركة موقعي",
+    "register-button": "التسجيل",
+    "already-account": "هل لديك حساب؟",
+    "login-link": "تسجيل الدخول",
+    "cv-label": "السيرة الذاتية (تحميل) :",
+    "availability-label": "التوفر :",
+    "status-label": "الحالة المهنية :",
+
+    // Footer
+    "copyright": "© 2025 Dari Services جميع الحقوق محفوظة."
+  }
 };
+
 function changeLanguage() {
     const lang = document.getElementById('lang-select').value;
     const elements = document.querySelectorAll('[data-translate]');
