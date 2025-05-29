@@ -708,7 +708,7 @@ footer p {
 #lang-select {
     padding: 5px;
     border-radius: 5px;
-    border: 1px solid #ff0000;
+    border: 1px solid #18379b;
     color: #ffffff;
     background-color: #14169c;
     cursor: pointer;
@@ -861,8 +861,8 @@ button:hover {
     </ul>
 </section>
 
-         
-      <section class="client" id="client">
+     <!-- SECTION CLIENT -->
+<section class="client" id="client">
   <h2 data-translate="you-are-client">Vous êtes client ?</h2>
   <ul>
     <li>
@@ -883,22 +883,22 @@ button:hover {
   </ul>
   <button onclick="openModal()" data-translate="my-account-button">Mon compte</button>
 </section>
-<!-- Message de réussite pour la connexion -->
+
+<!-- Messages de réussite -->
 <div id="loginSuccessMessage" style="display: none; color: green; font-weight: bold; text-align: center; position: fixed; top: 0; left: 0; width: 100%; background-color: #e0ffe0; padding: 10px; z-index: 9999;">
   ✅ Connexion réussie !
 </div>
 
-<!-- Message de réussite pour l'inscription -->
 <div id="signupSuccessMessage" style="display: none; color: green; font-weight: bold; text-align: center; position: fixed; top: 0; left: 0; width: 100%; background-color: #e0ffe0; padding: 10px; z-index: 9999;">
   ✅ Inscription réussie !
 </div>
 
-<!-- Modal pour connexion et création de compte -->
-<div id="modal" class="modal">
+<!-- MODAL -->
+<div id="modal" class="modal" style="display: none;">
   <div class="modal-content">
-    <span class="close" id="closeBtn">&times;</span>
+    <span class="close" id="closeBtn" onclick="closeModal()">&times;</span>
 
-    <!-- Formulaire de connexion -->
+    <!-- FORMULAIRE DE CONNEXION -->
     <div id="login-form">
       <h3 data-translate="login-title">Connexion</h3>
       <form onsubmit="handleLogin(event)">
@@ -912,110 +912,115 @@ button:hover {
       <p data-translate="no-account">Pas encore de compte ? <a href="#" onclick="showRegisterForm()" data-translate="create-account">Créer un compte</a></p>
     </div>
 
-    <!-- Formulaire d'inscription -->
-    <div id="register-form" style="display: none;">
-      <h3 data-translate="register-title">Créer un compte</h3>
-      <form onsubmit="handleSignup(event)">
-        <label for="firstname" data-translate="first-name-label">Prénom :</label>
-        <input type="text" id="firstname" name="firstname" required>
-        <label for="lastname" data-translate="last-name-label">Nom :</label>
-        <input type="text" id="lastname" name="lastname" required>
-        <label for="phone" data-translate="phone-label">Numéro de téléphone :</label>
-        <input type="tel" id="phone" name="phone" required>
-        <label for="email-register" data-translate="email-register-label">Email :</label>
-        <input type="email" id="email-register" name="email" required>
-        <label for="password-register" data-translate="password-register-label">Mot de passe :</label>
-        <input type="password" id="password-register" name="password" required>
+ <!-- FORMULAIRE D'INSCRIPTION -->
+<div id="register-form" style="display: none;">
+  <h3 data-translate="register-title">Créer un compte</h3>
+  <form onsubmit="handleSignup(event)">
+    <label for="firstname" data-translate="first-name-label">Prénom :</label>
+    <input type="text" id="firstname" name="firstname" required>
 
-        <!-- Champ pour confirmer le mot de passe -->
-        <label for="confirm-password-register" data-translate="confirm-password-register-label">Confirmer le mot de passe :</label>
-        <input type="password" id="confirm-password-register" name="confirmPassword" required>
+    <label for="lastname" data-translate="last-name-label">Nom :</label>
+    <input type="text" id="lastname" name="lastname" required>
 
-        <label for="address" data-translate="address-label">Adresse :</label>
-        <input type="text" id="address" name="address" required>
-        <button type="button" onclick="shareLocation()" data-translate="share-location">Partager ma localisation</button>
-        <button type="submit" data-translate="register-button">S'inscrire</button>
-      </form>
-      <p data-translate="already-account">Déjà un compte ? <a href="#" onclick="showLoginForm()" data-translate="login-link">Se connecter</a></p>
-    </div>
+    <label for="phone" data-translate="phone-label">Numéro de téléphone :</label>
+    <input type="tel" id="phone" name="phone" required>
+
+    <label for="email-register" data-translate="email-register-label">Email :</label>
+    <input type="email" id="email-register" name="email" required>
+
+    <label for="password-register" data-translate="password-register-label">Mot de passe :</label>
+    <input type="password" id="password-register" name="password" required>
+
+    <label for="confirm-password-register" data-translate="confirm-password-register-label">Confirmer le mot de passe :</label>
+    <input type="password" id="confirm-password-register" name="confirmPassword" required>
+
+    <label for="address" data-translate="address-label">Adresse :</label>
+    <input type="text" id="address" name="address" required>
+
+    <button type="button" onclick="shareLocation()" data-translate="share-location">Partager ma localisation</button>
+
+    <!-- 🔴 MESSAGE D'ERREUR À METTRE ICI, DANS LE FORMULAIRE -->
+    <p id="passwordError" style="color: red; display: none; font-weight: bold; margin-top: 10px;"></p>
+
+    <button type="submit" data-translate="register-button">S'inscrire</button>
+  </form>
+
+  <p data-translate="already-account">Déjà un compte ? <a href="#" onclick="showLoginForm()" data-translate="login-link">Se connecter</a></p>
+</div>
+
   </div>
 </div>
 
+<!-- SCRIPT -->
 <script>
-  // Fonction pour ouvrir la modale d'inscription
   function showRegisterForm() {
     document.getElementById('login-form').style.display = 'none';
     document.getElementById('register-form').style.display = 'block';
   }
 
-  // Fonction pour ouvrir la modale de connexion
   function showLoginForm() {
     document.getElementById('register-form').style.display = 'none';
     document.getElementById('login-form').style.display = 'block';
   }
 
-  // Fonction de gestion de la connexion (simulée côté client)
-  function handleLogin(event) {
-    event.preventDefault(); // Empêche la soumission du formulaire par défaut
-
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
-
-    // Simuler la connexion
-    alert(`Connexion réussie !\nEmail: ${email}`);
-
-    // Affichage du message de succès pour la connexion en haut de la page
-    document.getElementById('loginSuccessMessage').style.display = "block";
-    setTimeout(function() {
-      document.getElementById('loginSuccessMessage').style.display = "none"; // Cacher après 5 secondes
-    }, 5000);
-
-    // Fermer la modale après connexion
-    closeModal();
+  function openModal() {
+    document.getElementById('modal').style.display = "block";
   }
 
-  // Fonction de gestion de l'inscription (simulée côté client)
-  function handleSignup(event) {
-    event.preventDefault(); // Empêche la soumission du formulaire par défaut
-
-    const firstname = document.getElementById('firstname').value;
-    const lastname = document.getElementById('lastname').value;
-    const phone = document.getElementById('phone').value;
-    const email = document.getElementById('email-register').value;
-    const password = document.getElementById('password-register').value;
-    const confirmPassword = document.getElementById('confirm-password-register').value; // Confirmation du mot de passe
-    const address = document.getElementById('address').value;
-
-    // Validation de la confirmation du mot de passe
-    if (password !== confirmPassword) {
-      alert('Les mots de passe ne correspondent pas.');
-      return;
-    }
-
-    // Simuler l'inscription
-    alert(`Inscription réussie !\nNom: ${firstname} ${lastname}\nEmail: ${email}\nTéléphone: ${phone}`);
-
-    // Affichage du message de succès pour l'inscription en haut de la page
-    document.getElementById('signupSuccessMessage').style.display = "block";
-    setTimeout(function() {
-      document.getElementById('signupSuccessMessage').style.display = "none"; // Cacher après 5 secondes
-    }, 5000);
-
-    // Fermer la modale après inscription
-    closeModal();
-  }
-
-  // Fonction pour fermer les modales
   function closeModal() {
     document.getElementById('modal').style.display = "none";
   }
 
-  // Fermer la modale si l'utilisateur clique en dehors de la boîte
-  window.onclick = function(event) {
-    if (event.target == document.getElementById('modal')) {
-      closeModal();
-    }
+  function handleLogin(event) {
+    event.preventDefault();
+    const email = document.getElementById('email').value;
+    alert(`Connexion réussie !\nEmail: ${email}`);
+    document.getElementById('loginSuccessMessage').style.display = "block";
+    setTimeout(() => {
+      document.getElementById('loginSuccessMessage').style.display = "none";
+    }, 5000);
+    closeModal();
   }
+
+  function handleSignup(event) {
+  event.preventDefault();
+
+  const password = document.getElementById('password-register').value;
+  const confirmPassword = document.getElementById('confirm-password-register').value;
+  const passwordError = document.getElementById('passwordError'); // Élément <p> pour afficher l'erreur
+
+  if (password !== confirmPassword) {
+    passwordError.textContent = "❌ Les mots de passe ne correspondent pas.";
+    passwordError.style.display = "block";
+    return;
+  } else {
+    passwordError.style.display = "none";
+  }
+
+  const firstname = document.getElementById('firstname').value;
+  const lastname = document.getElementById('lastname').value;
+  const phone = document.getElementById('phone').value;
+  const email = document.getElementById('email-register').value;
+  const address = document.getElementById('address').value;
+
+  document.getElementById('signupSuccessMessage').style.display = "block";
+  setTimeout(() => {
+    document.getElementById('signupSuccessMessage').style.display = "none";
+  }, 5000);
+
+  closeModal();
+}
+
+window.onclick = function(event) {
+  if (event.target == document.getElementById('modal')) {
+    closeModal();
+  }
+}
+
+function shareLocation() {
+  alert("Fonction de géolocalisation déclenchée !");
+}
+
 </script>
 
 
@@ -1112,8 +1117,7 @@ button:hover {
     <p data-translate="no-account">Pas encore de compte ? <a href="#" onclick="openSignupModal()" data-translate="create-account">Créer un compte</a></p>
   </div>
 </div>
-
-<!-- Modale pour l'inscription professionnel -->
+<!-- Formulaire d'inscription professionnel -->
 <div id="signupModal" class="modal" style="display: none;">
   <div class="modal-content">
     <span class="close" onclick="closeModal()">&times;</span>
@@ -1131,8 +1135,9 @@ button:hover {
       <label for="email" data-translate="email-register-label">Email :</label>
       <input type="email" id="email" name="email" required placeholder="Votre email professionnel">
 
-      <label for="cv" data-translate="cv-label">CV (Télécharger) :</label>
-      <input type="file" id="cv" name="cv" accept=".pdf,.docx" required>
+      <!-- Champ CV visible seulement si l'utilisateur est un professionnel -->
+      <label for="cv" data-translate="cv-label" id="cv-label">CV (Télécharger) :</label>
+      <input type="file" id="cv" name="cv" accept=".pdf,.docx" style="display: none;" required>
 
       <label for="availability" data-translate="availability-label">Disponibilité :</label>
       <input type="text" id="availability" name="availability" required placeholder="Ex : Disponible immédiatement, ou 1 mois à partir de...">
@@ -1153,18 +1158,7 @@ button:hover {
 </div>
 
 <script>
-  // Fonction pour ouvrir la modale d'inscription
-  function openSignupModal() {
-    document.getElementById('signupModal').style.display = "block";
-  }
-
-  // Fonction pour fermer les modales
-  function closeModal() {
-    document.getElementById('signupModal').style.display = "none";
-    document.getElementById('loginModal').style.display = "none";
-  }
-
-  // Fonction de gestion de l'inscription (simulée côté client)
+  // Fonction pour gérer l'inscription
   function handleSignup(event) {
     event.preventDefault(); // Empêche la soumission du formulaire par défaut
 
@@ -1178,14 +1172,8 @@ button:hover {
     const password = document.getElementById('password').value;
     const confirmPassword = document.getElementById('confirmPassword').value;
 
-    // Validation du mot de passe
-    if (password !== confirmPassword) {
-      alert('Les mots de passe ne correspondent pas.');
-      return;
-    }
-
-    // Validation du CV
-    if (!cv) {
+    // Validation du CV uniquement pour les professionnels
+    if (cv && document.getElementById('cv').style.display !== "none" && !cv) {
       alert('Veuillez télécharger votre CV.');
       return;
     }
@@ -1203,24 +1191,22 @@ button:hover {
     closeModal();
   }
 
-  // Fonction de gestion de la connexion (simulée côté client)
-  function handleLogin(event) {
-    event.preventDefault(); // Empêche la soumission du formulaire par défaut
+  // Fonction pour ouvrir la modale d'inscription
+  function openSignupModal() {
+    document.getElementById('signupModal').style.display = "block";
+    
+    // Afficher le champ CV si l'utilisateur est un professionnel
+    const userType = 'professional'; // Remplacer cette ligne par une logique de type d'utilisateur
+    if (userType === 'professional') {
+      document.getElementById('cv').style.display = "block"; // Afficher le champ CV
+      document.getElementById('cv-label').style.display = "block"; // Afficher le label du CV
+    }
+  }
 
-    const email = document.getElementById('email-professional').value;
-    const password = document.getElementById('password-professional').value;
-
-    // Simuler la connexion
-    alert(`Connexion réussie !\nEmail: ${email}`);
-
-    // Affichage du message de succès pour la connexion en haut de la page
-    document.getElementById('loginSuccessMessage').style.display = "block";
-    setTimeout(function() {
-      document.getElementById('loginSuccessMessage').style.display = "none"; // Cacher après 5 secondes
-    }, 5000);
-
-    // Fermer la modale après connexion
-    closeModal();
+  // Fonction pour fermer les modales
+  function closeModal() {
+    document.getElementById('signupModal').style.display = "none";
+    document.getElementById('loginModal').style.display = "none";
   }
 
   // Fermer la modale si l'utilisateur clique en dehors de la boîte
