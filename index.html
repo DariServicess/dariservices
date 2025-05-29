@@ -472,14 +472,35 @@ img.logo {
     color: #007bff;
 }
 
-.moving-text {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 50px;
-    color: #ffffff;
-    font-weight: bold;
-    white-space: nowrap;
-    animation: scroll-text 20s linear infinite;
+.scroll-container {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  box-sizing: border-box;
 }
+
+.moving-text {
+  display: inline-block;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 50px; /* Taille par défaut pour PC */
+  color: #ffffff;
+  font-weight: bold;
+  animation: scroll-text 15s linear infinite;
+}
+
+/* Pour les petits écrans (mobile, tablettes) */
+@media (max-width: 768px) {
+  .moving-text {
+    font-size: 25px; /* Taille réduite pour mobiles */
+  }
+}
+
+@keyframes scroll-text {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+
 
 @keyframes scroll-text {
     0% {
@@ -822,8 +843,13 @@ button:hover {
     
    
     <section class="hero" id="hero">
-        <p class="moving-text" data-translate="hero-text">Trouvez des professionnels qualifiés, de confiance et disponibles près de chez vous</p>
-    </section>
+  <div class="scroll-container">
+    <p class="moving-text" data-translate="hero-text">
+      Trouvez des professionnels qualifiés, de confiance et disponibles près de chez vous
+    </p>
+  </div>
+</section>
+
     
     <div class="about" id="about">
         <h2><span data-translate="about-welcome">Bienvenue sur </span>  <img src="image.png" alt="Dari Services" class="dari-image" data-translate="about-logo"></h2>
