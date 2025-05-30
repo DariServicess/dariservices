@@ -399,7 +399,7 @@ img.logo {
     right: 20px;
     top: 20px;
     padding: 10px;
-    background-color: #ce0022;
+    background-color: #007bff;
     color: white;
     border: none;
     cursor: pointer;
@@ -729,9 +729,9 @@ footer p {
 #lang-select {
     padding: 5px;
     border-radius: 5px;
-    border: 1px solid #96d600;
+    border: 1px solid #a4cf3f;
     color: #ffffff;
-    background-color: #0e1a5c;
+    background-color: #14169c;
     cursor: pointer;
 }
 
@@ -820,7 +820,8 @@ button:hover {
 
              <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="a.css">
-<link rel="icon" href="images/logo.png" type="image/png">
+  <link rel="icon" href="images/logo.png" type="image/png">
+
 </head>
 <body>
     <header>
@@ -1282,11 +1283,10 @@ function showSignupForm() {
             de confiance près de chez vous grâce à notre application.
         </p>
         <div class="download-buttons">
-    <a href="https://drive.google.com/file/d/1LV-lcypUCruXzOT8JDsJ-eccXROveKVC/view?usp=sharing" class="btn-download">
-        Télécharger le fichier APK
-    </a>
-</div>
-
+            <a href="https://drive.google.com/file/d/1LV-lcypUCruXzOT8JDsJ-eccXROveKVC/view?usp=sharing" class="btn-download">
+                Télécharger le fichier APK
+            </a>
+        </div>
     </div>
         <div class="phone-image">
             <img src="dari.png" alt="Mockup Téléphone">
@@ -1488,13 +1488,11 @@ li.textContent = `${user.name} - ${user.email}`;
     "availability-label": "Disponibilité :",
     "status-label": "Statut professionnel :",
 
-     
     // Footer
     "copyright": "&copy; 2025 Dari Services. Tous droits réservés."
   },
 
   ar: {
-   
     // Navigation
     "nav-home": "الصفحة الرئيسية",
     "nav-about": "عن الموقع",
@@ -1592,50 +1590,36 @@ function changeLanguage() {
     const lang = document.getElementById('lang-select').value;
     const elements = document.querySelectorAll('[data-translate]');
     
-    // Change la langue du body pour l'alignement (rtl ou ltr)
+    // Change la langue du body pour l'alignement de droite à gauche (RTL)
     document.body.setAttribute('lang', lang);
-
+    
+    // Change le contenu des éléments traduits
     elements.forEach((element) => {
         const key = element.getAttribute('data-translate');
-
-        if (key === "no-account") {
-            // Cas spécial : élément contenant un lien à traduire
-            const link = element.querySelector('a[data-translate="create-account"]');
-            element.firstChild.textContent = (translations[lang][key] || element.firstChild.textContent) + " ";
-            if (link) {
-                link.textContent = translations[lang]["create-account"] || link.textContent;
-            }
-        } else {
-            // Traduction normale
-            element.textContent = translations[lang][key] || element.textContent;
-        }
+        element.textContent = translations[lang][key] || element.textContent;
     });
-
+    
+    // Applique le sens de lecture (rtl ou ltr)
     if (lang === "ar") {
-        document.body.style.direction = "rtl";  // droite à gauche
+        document.body.style.direction = "rtl";  // Pour l'arabe (droite à gauche)
     } else {
-        document.body.style.direction = "ltr";  // gauche à droite
+        document.body.style.direction = "ltr";  // Pour les autres langues (gauche à droite)
     }
 }
 
-// Fonction initiale pour traduire la page (par défaut, français)
 function translatePage() {
-    const elements = document.querySelectorAll('[data-translate]');
-    const defaultLang = 'fr';
-
-    elements.forEach((element) => {
-        const key = element.getAttribute('data-translate');
-        if (translations[defaultLang] && translations[defaultLang][key]) {
-            element.textContent = translations[defaultLang][key];
-        }
-    });
+  const elements = document.querySelectorAll('[data-translate]');
+  
+  elements.forEach((element) => {
+    const key = element.getAttribute('data-translate');
+    if (translations[key]) {
+      element.innerText = translations[key];
+    }
+  });
 }
 
-// Supprime la fonction translateLoginModalTo, elle n'est pas nécessaire
-
-// Appelle la traduction initiale (en français ici)
+// Appeler la fonction de traduction pour traduire tout le contenu
 translatePage();
-
     </script>
     
        
